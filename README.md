@@ -51,3 +51,7 @@ https://www.codeproject.com/Articles/867391/JAX-WS-Using-Apache-CXF-to-Create-a-
 
 * Maven CXF:
 https://github.com/apache/cxf/tree/master/distribution/src/main/release/samples/java_first_jaxws
+
+* Git: Stackoverflow
+https://stackoverflow.com/questions/927358/how-to-undo-the-last-commits-in-git
+
