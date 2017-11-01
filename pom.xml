@@ -5,7 +5,7 @@
     <description>Java First demo using JAX-WS APIs</description>
 		
 	<groupId>com.zafin.spark</groupId>
-    <artifactId>java_first_jaxws</artifactId>
+    <artifactId>jaxws</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
     <properties>
@@ -84,6 +84,7 @@
             <artifactId>spring-web</artifactId>
 			<version>4.2.2.RELEASE</version>
         </dependency>
+		
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
