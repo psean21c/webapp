@@ -21,14 +21,20 @@
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
-                   <executions>
-				     <execution>
-				       <phase>process-test-resources</phase>
-				       <goals>
-				         <goal>time</goal>
-				       </goals>
-				     </execution>
-				   </executions>
+                <executions>
+               <execution>
+                  <id>id.post-clean</id>
+                  <phase>post-clean</phase>
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+                  <configuration>
+                     <tasks>
+                        <echo>post-clean phase</echo>
+                     </tasks>
+                  </configuration>
+               </execution>
+               </executions>
             </plugin>
             
 		</plugins>
