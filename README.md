@@ -55,3 +55,6 @@ https://github.com/apache/cxf/tree/master/distribution/src/main/release/samples/
 * Git: Stackoverflow
 https://stackoverflow.com/questions/927358/how-to-undo-the-last-commits-in-git
 
+* Maven Official
+https://maven.apache.org/plugins/maven-compiler-plugin/
+
