@@ -1,4 +1,4 @@
-package com.spark.algo.tree;
+package com.spark;
 
 public class App {
 
