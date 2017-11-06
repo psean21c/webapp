@@ -1,4 +1,4 @@
-package com.spark.unit.mockito;
+package java.com.spark.unit.mockito;
 
 public class Stock {
 	   private String stockId;

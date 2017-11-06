@@ -1,4 +1,4 @@
-package com.spark;
+package java.com.spark;
 
 public class App {
 

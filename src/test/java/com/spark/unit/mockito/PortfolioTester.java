@@ -1,5 +1,8 @@
-package com.spark.unit.mockito;
+package java.com.spark.unit.mockito;
 
+import java.com.spark.unit.mockito.Portfolio;
+import java.com.spark.unit.mockito.Stock;
+import java.com.spark.unit.mockito.StockService;
 import java.util.ArrayList;
 import java.util.List;
 
