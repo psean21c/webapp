@@ -26,9 +26,12 @@ $cd C:\dev\apache-tomcat-7.0.82\bin
 2) Deploy folder
 $cd C:\dev\apache-tomcat-7.0.82\webapps
 
-3) Landing Page
+3) Manage Page
 http://localhost:8080/manager/html
 tomcat/s3cret
+
+4) Landing Page
+http://localhost:8080/zafinWS/
 
 /************************************************************
 Maven
