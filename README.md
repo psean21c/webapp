@@ -1,7 +1,7 @@
 /************************************************************
 History
 ************************************************************/
-
+```
 
 1) Download & Unzip: SoapExample.rar
 2) Update files: pom.xml / .classpath / .project
@@ -31,12 +31,7 @@ mvn archetype:generate
 mvn package
 mvn install 
 
-// Undo a commit and redo
-$ git commit -m "mistake"  
 
-$ git reset HEAD~   
-<correct>
-$ git commit -c ORIG_HEAD
 
 /************************************************************
 Reference
