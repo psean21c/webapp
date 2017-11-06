@@ -1,4 +1,4 @@
-package java.com.spark.unit.mockito;
+package com.spark.unit.mockito;
 
 import java.util.List;
 

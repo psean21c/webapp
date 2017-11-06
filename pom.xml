@@ -18,10 +18,10 @@
     <build>
     	<resources>
     		<resource>
-    			<directory>src/com/spark</directory>
+    			<directory>src/main/java</directory>
     		</resource>
     		<resource>
-    			<directory>test/com/spark</directory>
+    			<directory>src/test/java</directory>
     		</resource>
     	</resources>
         <plugins>
