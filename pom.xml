@@ -17,6 +17,7 @@
 
     <build>
 
+		<!--  
     	<resources>
     		<resource>
     			<directory>src/main/java</directory>
@@ -25,8 +26,10 @@
     			<directory>src/test/java</directory>
     		</resource>
     	</resources>
+    	-->
     	
         <plugins>
+        	<!-- maven-compiler -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.0</version>
@@ -35,6 +38,30 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+            
+        	<!-- maven cleaner -->
+			<plugin>
+			    <artifactId>maven-clean-plugin</artifactId>
+			    <version>2.6.1</version>
+			    <configuration>
+			      <filesets>
+			        <fileset>
+			          <directory>src/main/java/com/zafin</directory>
+			          <!--  
+			          <includes>
+			            <include>**/*.log</include>
+			          </includes>
+			          <excludes>
+			            <exclude>**/important.log</exclude>
+			          </excludes>
+			          <followSymlinks>false</followSymlinks>
+			          -->
+			        </fileset>
+			      </filesets>
+			    </configuration>
+			  </plugin>			
+            
+        	<!-- cxf code generator -->
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
@@ -58,6 +85,7 @@
 					</execution>
 				</executions>
 			</plugin> 
+			
         </plugins>
 
 	</build>
