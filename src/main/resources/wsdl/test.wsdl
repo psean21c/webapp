@@ -54,7 +54,7 @@
 
 	<wsdl:service name="SOATestEndpointService">
 		<wsdl:port name="SOATestEndpoint" binding="tns:SOATestBinding">
-			<soap:address location="http://localhost:8181/cxf/zafin/learn" />
+			<soap:address location="http://localhost:8080/jaxws-0.0.1-SNAPSHOT" />
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>
