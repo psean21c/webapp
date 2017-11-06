@@ -52,8 +52,11 @@ Reference
 on project java_first_jaxws: Error assembling WAR: webxml attribute is required (or pre-existing WEB-INF/web.xml if executing in update mode) -> [Help 1]'''
 >> Need to create WEB-INF/web.xml
 
-* Download : SoapExample.rar
+* Download : 
+1) SoapExample.rar
 https://www.codeproject.com/Articles/867391/JAX-WS-Using-Apache-CXF-to-Create-a-Bottom-Up-Web
+2) Useful for structure [ main/java ] 
+https://github.com/smirzai/webServiceMockDemo/tree/master/webServiceMockDemo
 
 * Maven CXF:
 https://github.com/apache/cxf/tree/master/distribution/src/main/release/samples/java_first_jaxws
