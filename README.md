@@ -44,6 +44,8 @@ mvn archetype:generate
 mvn package
 mvn install 
 
+// adding antrun
+mvn antrun:run@my-exe
 
 
 /************************************************************
