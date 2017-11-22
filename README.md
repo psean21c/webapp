@@ -22,9 +22,11 @@ Tomcat
 ************************************************************/
 1) Run
 $cd C:\dev\apache-tomcat-7.0.82\bin
+$startup.bat
 
 2) Deploy folder
 $cd C:\dev\apache-tomcat-7.0.82\webapps
+- Copy the war file to the folder - webapps
 
 3) Manage Page
 http://localhost:8080/manager/html
