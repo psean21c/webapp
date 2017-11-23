@@ -13,7 +13,11 @@
 	
     <properties>
 		<cxf.version>2.7.10</cxf.version>
-		<basedir>C:/dev/apache-tomcat-7.0.82/webapps</basedir>
+		<tomcatDir>C:/dev/apache-tomcat-7.0.82/webapps</tomcatDir>
+		<webDir>C:/Users/sungmin.park/git/spark/webapp/target</webDir> <!-- Unix base -->
+<!--  		
+        <webDir>C:\Users\sungmin.park\git\spark\webapp\target</webDir> Window base
+-->
     </properties>
 
     <build>
@@ -76,23 +80,17 @@
 				<version>1.3</version>
 				<executions>
 					<execution>
-					<id>my-exe</id>
-					<phase>deploy</phase>
-					<goals>
-						<goal>run</goal>
-					</goals>
-					<configuration>
-					<tasks>
-						<echo> antrun... running !!! - spark</echo>
-						<echo>Using env.test.properties</echo>
-					<!--
-						<copy file="zafinWS.war" tofile="${basedir}/zafinWS.war"/>
-					Place any Ant task here. You can add anything
-					you can add between <target> and </target> in a
-					build.xml.
-					-->
-					</tasks>
-					</configuration>
+						<id>my-exe</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+						<tasks>
+							<echo> ${basedir}/ antrun... running !!! - spark</echo>
+							<copy file="${webDir}/zafinWS.war" tofile="${tomcatDir}/zafinWS.war"/>
+						</tasks>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>           
@@ -174,13 +172,7 @@
 		    <version>1.10.19</version>
 		    <scope>test</scope>
 		</dependency>        
-<!--  		
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-antrun-plugin</artifactId>
-			<version>1.3</version>
-		</dependency>        
--->
+
 		
     </dependencies>
     
