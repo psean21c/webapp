@@ -16,11 +16,16 @@ CamelProcessor
 	
 5) Configure Servlet Container (Troubleshoot)
 
-[Dec-07]
-- Added Spring
-- Added javax.servlet-api.jar / servlet-api.jar (in the Tomcat lib)
+>> Dec-07
+- Added Spring project
+- Added jar file to eclipse library
+ : javax.servlet-api.jar / servlet-api.jar (in the Tomcat lib)
 
-```
+>> Target
+Integrate JAVA to JSP
+Read configuration from configuration file
+
+
 /************************************************************
 Tomcat
 ************************************************************/
