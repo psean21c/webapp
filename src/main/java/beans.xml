@@ -8,5 +8,11 @@
    <bean id = "helloWorld" class = "spring.basic.HelloWorld">
       <property name = "message" value = "Hello World!"/>
    </bean>
+   
+   <bean id = "textEditor" class = "spring.basic.inject.TextEditor">
+      <property name = "spellChecker">
+         <bean id = "spellChecker" class = "spring.basic.inject.SpellChecker"/>
+      </property>
+   </bean>
 
 </beans>
