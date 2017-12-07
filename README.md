@@ -17,6 +17,7 @@ CamelProcessor
 5) Configure Servlet Container (Troubleshoot)
 
 
+```
 /************************************************************
 Tomcat
 ************************************************************/
@@ -45,7 +46,7 @@ mvn package
 mvn install 
 
 // adding antrun
-mvn antrun:run@my-exe
+mvn antrun:run@zafin-deploy
 
 
 /************************************************************
