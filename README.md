@@ -1,7 +1,7 @@
 /************************************************************
 History
 ************************************************************/
-```
+
 
 1) Download & Unzip: SoapExample.rar
 2) Update files: pom.xml / .classpath / .project
@@ -16,6 +16,9 @@ CamelProcessor
 	
 5) Configure Servlet Container (Troubleshoot)
 
+[Dec-07]
+- Added Spring
+- Added javax.servlet-api.jar / servlet-api.jar (in the Tomcat lib)
 
 ```
 /************************************************************
@@ -81,4 +84,11 @@ https://stackoverflow.com/questions/927358/how-to-undo-the-last-commits-in-git
 
 * Maven Official
 https://maven.apache.org/plugins/maven-compiler-plugin/
+
+* JSP
+https://www.tutorialspoint.com/jsp/jsp_environment_setup.htm
+
+* Spring
+https://www.tutorialspoint.com/spring/spring_hello_world_example.htm
+
 
