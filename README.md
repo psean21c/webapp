@@ -50,6 +50,16 @@ mvn antrun:run@zafin-deploy
 
 
 /************************************************************
+JAR library
+************************************************************/
+>> Added jar to SOAP_LIB in eclipse
+camel-core-2.12.0.jar
+camel-cxf-2.12.0.jar
+cxf-tools-common-3.1.5.jar
+javax.servlet-api-3.1.0
+org.eclipse.jetty.server.jar
+
+/************************************************************
 Reference
 ************************************************************/
 * Troubleshoot : 
