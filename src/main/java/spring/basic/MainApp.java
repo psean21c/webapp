@@ -7,7 +7,7 @@ import spring.basic.inject.TextEditor;
 
 public class MainApp {
 	
-	@SuppressWarnings("resource")
+	//@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		// 1) hello
@@ -20,5 +20,6 @@ public class MainApp {
 
 		String ctxID = context.getId();
 		System.out.println(ctxID + "");
+
 	}
 }
