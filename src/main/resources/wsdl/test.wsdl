@@ -41,8 +41,7 @@
 	<wsdl:binding name="SOATestBinding" type="tns:SOATestEndpoint">
 		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
 		<wsdl:operation name="SOATest">
-			<soap:operation soapAction="http://zafin.com"
-				style="document" />
+			<soap:operation soapAction="http://zafin.com" style="document" />
 			<wsdl:input>
 				<soap:body parts="in" use="literal" />
 			</wsdl:input>

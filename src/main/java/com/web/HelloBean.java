@@ -17,10 +17,14 @@ public class HelloBean {
 	}
 
 	public String getHello() {
+		String hello = null;
 		if (name == null) {
-			return "Hello every body";
+			hello = "Hello every body";
+		} else {
+			hello = "Hello" + name;
 		}
-		return "Hello " + name;
+		hello += ":Backend";
+		return hello;
 	}
 
 }
