@@ -1,4 +1,4 @@
-package spring.basic.inject.autowired;
+package spring.basic.inject.lab2;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,4 +1,4 @@
-package spring.basic.inject.autowired;
+package spring.basic.inject.lab2;
 
 public class Teacher {
 

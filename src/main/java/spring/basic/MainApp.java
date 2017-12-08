@@ -3,9 +3,8 @@ package spring.basic;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import spring.basic.inject.TextEditor;
-import spring.basic.inject.autowired.Lecture;
-import spring.basic.inject.required.Student;
+import spring.basic.inject.lab2.Lecture;
+
 
 public class MainApp {
 

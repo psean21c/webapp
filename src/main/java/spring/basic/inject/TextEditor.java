@@ -2,20 +2,21 @@ package spring.basic.inject;
 
 public class TextEditor {
 
-	private SpellChecker spellChecker1;
+	//JSR-330 (Dependency Injection for Java)
+	private SpellChecker spellChecker;
 
 	// a setter method to inject the dependency.
-	public void setSpellChecker(SpellChecker spellChecker1) {
+	public void setSpellChecker(SpellChecker spellChecker) {
 		// System.out.println("Inside setSpellChecker." );
-		this.spellChecker1 = spellChecker1;
+		this.spellChecker = spellChecker;
 	}
 
 	// a getter method to return spellChecker
 	public SpellChecker getSpellChecker() {
-		return spellChecker1;
+		return spellChecker;
 	}
 
 	public void spellCheck() {
-		spellChecker1.checkSpelling();
+		spellChecker.checkSpelling();
 	}
 }
