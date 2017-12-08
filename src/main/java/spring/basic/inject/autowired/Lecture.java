@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class Lecture {
 
-//	@Autowired
+	//@Autowired
 	private Teacher teacher;
 	
 	public Teacher getTeacher() {

@@ -1,6 +1,7 @@
 package spring.basic.inject;
 
 public class SpellChecker {
+	
 	   public SpellChecker(){
 	      System.out.println("Inside SpellChecker constructor." );
 	   }

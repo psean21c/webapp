@@ -5,7 +5,7 @@ public class Teacher {
 	private String name;
 
 	public Teacher(){
-		
+	      System.out.println("Inside Teacher constructor." );
 	}
 	
 	public String getName() {

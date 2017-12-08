@@ -20,7 +20,9 @@
    
    <bean id = "lecture" class = "spring.basic.inject.autowired.Lecture">
       <property name = "teacher">
-         <bean id = "teacher" class = "spring.basic.inject.autowired.Teacher"/>
+         <bean id = "teacher" class = "spring.basic.inject.autowired.Teacher">
+                  <property name = "name" value = "Murat"/>
+         </bean>  
       </property>
    </bean>
 
