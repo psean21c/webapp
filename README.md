@@ -102,3 +102,8 @@ http://o7planning.org/en/10263/java-jsp-tutorial#a38401
 * JDBC + JSP
 http://scis.athabascau.ca/html/server/jspdemo.htm
 
+* REST ful
+https://www.journaldev.com/2552/spring-rest-example-tutorial-spring-restful-web-services
+http://www.baeldung.com/building-a-restful-web-service-with-spring-and-java-based-configuration
+
+
