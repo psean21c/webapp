@@ -90,10 +90,10 @@ https://stackoverflow.com/questions/927358/how-to-undo-the-last-commits-in-git
 * Maven Official
 https://maven.apache.org/plugins/maven-compiler-plugin/
 
-* JSP
+* JSP (TutorialPoint)
 https://www.tutorialspoint.com/jsp/jsp_environment_setup.htm
 
-* Spring
+* Spring (TutorialPoint)
 https://www.tutorialspoint.com/spring/spring_hello_world_example.htm
 
 
