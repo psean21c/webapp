@@ -96,4 +96,5 @@ https://www.tutorialspoint.com/jsp/jsp_environment_setup.htm
 * Spring (TutorialPoint)
 https://www.tutorialspoint.com/spring/spring_hello_world_example.htm
 
-
+* Java + JSP
+http://o7planning.org/en/10263/java-jsp-tutorial#a38401
