@@ -98,3 +98,7 @@ https://www.tutorialspoint.com/spring/spring_hello_world_example.htm
 
 * Java + JSP
 http://o7planning.org/en/10263/java-jsp-tutorial#a38401
+
+* JDBC + JSP
+http://scis.athabascau.ca/html/server/jspdemo.htm
+
