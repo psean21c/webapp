@@ -17,10 +17,30 @@
       </property>
    </bean>
    
-   <bean id = "pupil" class = "spring.basic.inject.required.Student">
-         <property name = "name" value = "Erik"/>
+   
+   <bean id = "lecture" class = "spring.basic.inject.autowired.Lecture">
+      <property name = "teacher">
+         <bean id = "teacher" class = "spring.basic.inject.autowired.Teacher"/>
+      </property>
    </bean>
+
+   
 <!--  
+    teacher not initialized
+   <bean id = "teacher" class = "spring.basic.inject.autowired.Teacher"/>
+   <bean id = "lecture" class = "spring.basic.inject.autowired.Lecture"/>
+
+
+   <bean id = "lecture" class = "spring.basic.inject.autowired.Lecture">
+      <property name = "teacher">
+      </property>
+   </bean>
+
+   <bean id = "tutor" class = "spring.basic.inject.autowired.Teacher">
+         <property name = "name" value = "Murat"/>
+   </bean>
+
+
    <bean id = "pupil" class = "spring.basic.inject.required.Student">
       <property name = "name" value = "Erik"/>
       <property name = "age" value = "20"/>
