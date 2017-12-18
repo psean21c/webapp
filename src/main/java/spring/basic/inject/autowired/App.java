@@ -3,6 +3,7 @@ package spring.basic.inject.autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
 public class App {
 
 	@SuppressWarnings("resource")

@@ -1,0 +1,4 @@
+class Messenger {
+
+    def name
+}
