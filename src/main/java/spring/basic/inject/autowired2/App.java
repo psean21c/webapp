@@ -9,7 +9,7 @@ public class App {
 	public static void main(String[] args) {
 
 		// 1) configured in spring.xml
-		ApplicationContext context = new ClassPathXmlApplicationContext("./spring/basic/inject/autowired2/spring_aw2.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("./spring/basic/inject/autowired2/autowired.xml");
 		Foo foo = (Foo) context.getBean("foo");
 		foo.write();
 
