@@ -14,7 +14,7 @@ public class Logging {
 	 * Following is the definition for a pointcut to select all the methods
 	 * available. So advice will be called for all the methods.
 	 */
-	@Pointcut("execution(* com.tutorialspoint.*.*(..))")
+	@Pointcut("execution(* spring.aspectj.*.*(..))")
 	private void selectAll() {
 	}
 
@@ -24,7 +24,7 @@ public class Logging {
 	 */
 	@Before("selectAll()")
 	public void beforeAdvice() {
-		System.out.println("Going to setup student profile.");
+		System.out.println("@Before - Going to setup student profile.");
 	}
 
 	/**
@@ -33,7 +33,7 @@ public class Logging {
 	 */
 	@After("selectAll()")
 	public void afterAdvice() {
-		System.out.println("Student profile has been setup.");
+		System.out.println("@After - Student profile has been setup.");
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class Logging {
 	 */
 	@AfterReturning(pointcut = "selectAll()", returning = "retVal")
 	public void afterReturningAdvice(Object retVal) {
-		System.out.println("Returning:" + retVal.toString());
+		System.out.println("@AfterReturning - Returning:" + retVal.toString());
 	}
 
 	/**
@@ -50,6 +50,12 @@ public class Logging {
 	 */
 	@AfterThrowing(pointcut = "selectAll()", throwing = "ex")
 	public void AfterThrowingAdvice(IllegalArgumentException ex) {
-		System.out.println("There has been an exception: " + ex.toString());
+		System.out.println("@AfterThrowing - There has been an exception: " + ex.toString());
 	}
+	
+	// Need to fix the problem for @Around
+//	@Around("selectAll()")
+//	public void AroundAdvise(){
+//		System.out.println("@Around: ");
+//	}
 }
