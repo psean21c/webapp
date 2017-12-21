@@ -3,10 +3,15 @@ package spring.aspectj;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+
 
 @Aspect
 public class Logging {
@@ -53,9 +58,17 @@ public class Logging {
 		System.out.println("@AfterThrowing - There has been an exception: " + ex.toString());
 	}
 	
+	@After("selectAll()")
+	public void namedPointCutExample(JoinPoint jp) {
+	System.out.println(" ***** namePointCut ***** " + jp.getSignature() + " is called");
+	}
+
+	
 	// Need to fix the problem for @Around
 //	@Around("selectAll()")
-//	public void AroundAdvise(){
+//	public void AroundAdvise(ProceedingJoinPoint pjp) throws Throwable{
 //		System.out.println("@Around: ");
+//		Object retVal = pjp.proceed();
+//		System.out.println("@Around retVal=" + retVal);
 //	}
 }

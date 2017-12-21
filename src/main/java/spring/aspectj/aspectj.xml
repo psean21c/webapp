@@ -7,6 +7,11 @@
    http://www.springframework.org/schema/aop 
    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
+<!--  
+//@Configuration
+//@EnableAspectJAutoProxy
+// What's the difference between @EnableAspectJAutoProxy vs. <aop:aspectj-autoproxy/>
+-->
    <aop:aspectj-autoproxy/>
 
    <!-- Definition for student bean -->
