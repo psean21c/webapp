@@ -9,15 +9,15 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-import spring.bean.DataSource;
-import spring.bean.MailService;
-import spring.bean.ComplexBeanFactoryBeanImplementation;
+import spring.basic.config.bean.ComplexBeanFactoryBeanImplementation;
+import spring.basic.config.bean.DataSource;
+import spring.basic.config.bean.MailService;
 
 //Questions answered in Core Spring 4.x Study Guide 
 /*
    • Are beans lazily or eagerly instantiated by default? How do you alter this behavior? 
 		By default Spring framework creates singleton beans eagerly but by setting lazy-init attribute beans can be initialized lazily
-		sample <bean id="mailService" class="spring.bean.MailService" lazy-init="true"/> 
+		sample <bean id="mailService" class="spring.basic.config.bean.MailService" lazy-init="true"/> 
 		or @Lazy annotation is used to lazily init beans
 
     • How many profiles can you have? 
@@ -30,8 +30,8 @@ import spring.bean.ComplexBeanFactoryBeanImplementation;
 
 
 @Configuration //let the Spring Framework knows this class is used as Configuration like it is done in application-context.xml file
-@ComponentScan(basePackages= {"spring.bean","spring.aspect"}) //components under packages will be scanned automatically with Spring Framework
-//@ComponentScan(basePackages= {"spring.bean","other.packages"})
+@ComponentScan(basePackages= {"spring.basic.config.bean","spring.aspect"}) //components under packages will be scanned automatically with Spring Framework
+//@ComponentScan(basePackages= {"spring.basic.config.bean","other.packages"})
 @PropertySource("classpath:util.properties") 
 //This is used to point util.properties file
 //xml version is <context:property-placeholder location="classpath:util.properties"/>  

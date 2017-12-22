@@ -10,8 +10,8 @@ public class MainApp {
 
 	public static void main(String[] args) {
 
-		// runAutoWired();
 		runSpringVersion();
+		runAutoWired();
 	}
 
 	static void runSpringVersion() {
@@ -24,8 +24,8 @@ public class MainApp {
 	static void runAutoWired() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		// // 1) hello
-		// HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
-		// obj.getMessage();
+		 HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+		 obj.getMessage();
 		//
 		// // 2) Inject
 		// TextEditor te = (TextEditor) context.getBean("textEditor");

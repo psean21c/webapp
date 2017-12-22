@@ -5,13 +5,13 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.Assert;
 
-import spring.bean.ComplexBean;
-import spring.bean.DatabaseService;
-import spring.bean.LoginService;
-import spring.bean.MailService;
-import spring.bean.RegisterService;
-import spring.bean.User;
-import spring.bean.UserManager;
+import spring.basic.config.bean.ComplexBean;
+import spring.basic.config.bean.DatabaseService;
+import spring.basic.config.bean.LoginService;
+import spring.basic.config.bean.MailService;
+import spring.basic.config.bean.RegisterService;
+import spring.basic.config.bean.User;
+import spring.basic.config.bean.UserManager;
 
 public class MainApp {
 
