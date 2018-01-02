@@ -21,6 +21,7 @@
 		<lang:property name="message" value="Value for names"/>
 	</lang:groovy>
 -->
-    <bean id = "demo" class="spring.basic.beans.DemoBeanPostProcessor"/>
- 
+    <bean id="demo" class="spring.basic.beans.DemoBeanPostProcessor"
+    	lazy-init="false" />
+
 </beans>
