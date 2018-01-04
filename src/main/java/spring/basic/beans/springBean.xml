@@ -10,18 +10,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 	                    
 
-<!--  
-	<lang:groovy id="messenger" 
-		script-source="classpath:spring/basic/beans/groovy/Messenger.groovy">
-		<lang:property name="message" value="Value for names"/>
-	</lang:groovy>
-	
-	<lang:groovy id="messenger" 
-		script-source="classpath:org/springframework/spring/basic/beans/groovy/Messenger.groovy">
-		<lang:property name="message" value="Value for names"/>
-	</lang:groovy>
--->
-    <bean id="demo" class="spring.basic.beans.DemoBeanPostProcessor"
-    	lazy-init="false" />
+
+    <bean id="bar" class="spring.basic.beans.Bar"/>
 
 </beans>

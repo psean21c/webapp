@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+	                    
+
+<!--  
+	<lang:groovy id="messenger" 
+		script-source="classpath:spring/basic/beans/groovy/Messenger.groovy">
+		<lang:property name="message" value="Value for names"/>
+	</lang:groovy>
+	
+	<lang:groovy id="messenger" 
+		script-source="classpath:org/springframework/spring/basic/beans/groovy/Messenger.groovy">
+		<lang:property name="message" value="Value for names"/>
+	</lang:groovy>
+-->
+    <bean id="demo" class="spring.basic.beans.bpp.DemoBeanPostProcessor"
+    	lazy-init="false" />
+
+</beans>

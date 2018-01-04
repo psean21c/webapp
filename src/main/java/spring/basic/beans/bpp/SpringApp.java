@@ -1,8 +1,9 @@
-package spring.basic.beans;
+package spring.basic.beans.bpp;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import spring.basic.beans.DemoBeanPostProcessor;
+
+import spring.basic.beans.bpp.DemoBeanPostProcessor;
 
 public class SpringApp {
 
