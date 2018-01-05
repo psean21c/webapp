@@ -2,6 +2,13 @@
 History
 ************************************************************/
 
+>> Jan-04
+Tested JavaConfi
+
+>> Next
+<component-scan> 
+@Conditional
+
 
 1) Download & Unzip: SoapExample.rar
 2) Update files: pom.xml / .classpath / .project
