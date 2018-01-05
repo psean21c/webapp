@@ -4,7 +4,7 @@ public class Bar {
 
 	public String name;
 
-//	public Bar(){}
+//	public CustomerService(){}
 	
 	public String getName() {
 		return name;
