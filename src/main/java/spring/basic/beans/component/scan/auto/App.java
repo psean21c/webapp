@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class App {
 
 	//http://www.javarticles.com/2016/01/spring-componentscan-annotation-example.html
+	//http://www.logicbig.com/how-to/code-snippets/jcode-spring-framework-componentscan/
 	public static void main(String[] args) {
 		
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
