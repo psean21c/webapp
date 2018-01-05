@@ -1,5 +1,8 @@
 package spring.basic.beans.component.scan;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CustomerService {
 
 	CustomerDAO customerDAO;
