@@ -16,7 +16,7 @@ public class App {
 		
 		Doe doe = (Doe) ctx.getBean("doe");
 		Tao tao = doe.getTao();
-		tao.toString();
+		System.out.println(tao.toString());
 		
 		((ClassPathXmlApplicationContext)ctx).close();
 	}
