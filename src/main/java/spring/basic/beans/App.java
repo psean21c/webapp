@@ -7,11 +7,10 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("./spring/basic/beans/springBean.xml");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("./spring/basic/beans/springBar.xml");
 		Bar bar = (Bar) ctx.getBean("bar");
-		int idx = bar.getIdx();
-		
-		System.out.println( "idx=" + idx);
+
+		System.out.println( "idx=" + bar.getName());
 		
 		((ClassPathXmlApplicationContext)ctx).close();
 	}

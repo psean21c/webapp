@@ -3,13 +3,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	                    
-<!-- 
-    	<constructor-arg value="5" index="0" type="java.lang.Integer">
-    	</constructor-arg>
- -->
 
-    <bean id="bar" class="spring.basic.beans.Bar">
+    <bean id="doe" class="spring.basic.beans.Doe">
+	    <constructor-arg type="spring.basic.beans.Tao"></constructor-arg>
     </bean>
 
+    <bean id="tao" class="spring.basic.beans.Tao"></bean>
 </beans>
