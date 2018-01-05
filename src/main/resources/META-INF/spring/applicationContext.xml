@@ -4,8 +4,7 @@
 	xmlns:osgi="http://www.springframework.org/schema/osgi" xmlns:cxf="http://camel.apache.org/schema/cxf"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd">
 
-
-
+<!--  
 	<cxf:cxfEndpoint id="cXFTest" address="/spark/learn"
 		endpointName="a:SOATestEndpoint" serviceName="a:SOATestEndpointService"
 		wsdlURL="META-INF/wsdl/test.wsdl" serviceClass="com.spark.SOATestEndpoint"
@@ -20,4 +19,5 @@
 		</camel:route>
 
 	</camelContext>
+-->	
 </beans>
