@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wbfxr="http://www.emf.cibc.com/emb/wbfxr" targetNamespace="http://www.emf.cibc.com/emb/wbfxr" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<xs:element name="GetRateInput" type="wbfxr:GetRateInput"/>
+	<xs:element name="GetRateOutput" type="wbfxr:GetRateOutput"/>
+	<xs:element name="BookContractInput" type="wbfxr:BookContractInput"/>
+	<xs:element name="BookContractOutput" type="wbfxr:BookContractOutput"/>
+	<xs:element name="echo">
+		<xs:annotation>
+			<xs:documentation>A simple message used to test the availability of a Service Provider or a Service Consumer </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Text" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>A variable string of text that must be echoed back by the Service Provider or the Service Consumer</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="GetRateInput">
+		<xs:sequence>
+			<xs:element name="User" type="wbfxr:User"/>
+			<xs:element name="Customer" type="wbfxr:Customer" minOccurs="0"/>
+			<xs:element name="RFQ" type="wbfxr:RFQ"/>
+		</xs:sequence>
+		<xs:attribute name="timestamp" type="xs:dateTime" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="GetRateOutput">
+		<xs:sequence>
+			<xs:element name="Quote" type="wbfxr:Quote"/>
+			<xs:element name="User" type="wbfxr:User"/>
+			<xs:element name="Customer" type="wbfxr:Customer" minOccurs="0"/>
+			<xs:element name="RFQ" type="wbfxr:RFQ"/>
+			<xs:element name="ErrorIndicator" type="wbfxr:ErrorIndicator" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="timestamp" type="xs:dateTime" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="BookContractInput">
+		<xs:sequence>
+			<xs:element name="quoteId" type="xs:string"/>
+			<xs:element name="rateSource" type="xs:decimal"/>
+			<xs:element name="acceptDeclineIndicator">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="wbfxr:acceptDeclineIndicator"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="declineReasonCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="bookedRate" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="User" type="wbfxr:User"/>
+			<xs:element name="bankBuyCurrency" type="xs:string"/>
+			<xs:element name="bankSellCurrency" type="xs:string"/>
+			<xs:element name="TransactionAmount" type="wbfxr:TransactionAmount"/>
+		</xs:sequence>
+		<xs:attribute name="timestamp" type="xs:dateTime" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="BookContractOutput">
+		<xs:sequence>
+			<xs:element name="quoteId" type="xs:string"/>
+			<xs:element name="ibtssContractNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="ErrorIndicator" type="wbfxr:ErrorIndicator" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="timestamp" type="xs:dateTime" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="User">
+		<xs:sequence>
+			<xs:element name="userId" type="xs:string" minOccurs="0"/>
+			<xs:element name="transitNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="channelId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Customer">
+		<xs:sequence>
+			<xs:element name="customerIdType" type="xs:string"/>
+			<xs:element name="customerId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RFQ">
+		<xs:sequence>
+			<xs:element name="specialPricingIndicator" minOccurs="0">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="wbfxr:specialPricingIndicator"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="segment" type="xs:string" minOccurs="0"/>
+			<xs:element name="bankBuyCurrency" type="xs:string"/>
+			<xs:element name="bankSellCurrency" type="xs:string"/>
+			<xs:element name="baseCurrency">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="wbfxr:baseCurrency"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransactionAmount" type="wbfxr:TransactionAmount"/>
+			<xs:element name="valueDate" type="xs:date" minOccurs="0"/>
+			<xs:element name="tradeDate" type="xs:date"/>
+			<xs:element name="amountType" type="xs:decimal"/>
+			<xs:element name="amountTypeDescription" type="xs:string" minOccurs="0"/>
+			<xs:element name="counterType" type="xs:decimal"/>
+			<xs:element name="counterTypeDescription" type="xs:string" minOccurs="0"/>
+			<xs:element name="internalIndicator" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="fxType">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="wbfxr:fxType"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="shippingIndicator" type="xs:boolean"/>
+			<xs:element name="ShippingDetails" type="wbfxr:ShippingDetails" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Quote">
+		<xs:sequence>
+			<xs:element name="quoteId" type="xs:string"/>
+			<xs:element name="rateSource" type="xs:decimal"/>
+			<xs:element name="ibtssCustomerCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="Rate" type="wbfxr:Rate" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Rate">
+		<xs:sequence>
+			<xs:element name="contractRate" type="xs:decimal"/>				
+			<xs:element name="timeout" type="xs:decimal"/>
+			<xs:element name="equivalentAmount" type="xs:decimal" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ErrorIndicator">
+		<xs:sequence>
+			<xs:element name="errorCode" type="xs:int"/>
+			<xs:element name="errorMessage" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ShippingDetails">
+		<xs:sequence>
+			<xs:element name="provinceCode">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="wbfxr:provinceCode"/>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="currencyOperationTransit" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TransactionAmount">
+		<xs:choice>
+			<xs:element name="bankBuyAmount" type="xs:decimal"/>
+			<xs:element name="bankSellAmount" type="xs:decimal"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:simpleType name="specialPricingIndicator">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STAFF"/>
+			<xs:enumeration value="WG AAA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="baseCurrency">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CAD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="fxType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CASH"/>
+			<xs:enumeration value="FUNDS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="provinceCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AB"/>
+			<xs:enumeration value="BC"/>
+			<xs:enumeration value="MB"/>
+			<xs:enumeration value="NB"/>
+			<xs:enumeration value="NL"/>
+			<xs:enumeration value="NT"/>
+			<xs:enumeration value="NS"/>
+			<xs:enumeration value="NU"/>
+			<xs:enumeration value="ON"/>
+			<xs:enumeration value="PE"/>
+			<xs:enumeration value="QC"/>
+			<xs:enumeration value="SK"/>
+			<xs:enumeration value="YT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="acceptDeclineIndicator">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Accept"/>
+			<xs:enumeration value="Decline"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
