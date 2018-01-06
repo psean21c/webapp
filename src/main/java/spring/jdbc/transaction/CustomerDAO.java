@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface CustomerDAO {
 	
-	//@Transactional
-	private String getCustomer();
-//	public String getCustomer();
+	@Transactional
+//	private String getCustomer();
+	public String getCustomer();
 }
