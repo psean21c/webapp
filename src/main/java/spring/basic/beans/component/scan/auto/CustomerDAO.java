@@ -1,9 +1,10 @@
 package spring.basic.beans.component.scan.auto;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Controller;
 
 //@Component
-@Repository
+//@Repository
+@Controller
 public class CustomerDAO {
 	@Override
 	public String toString() {
