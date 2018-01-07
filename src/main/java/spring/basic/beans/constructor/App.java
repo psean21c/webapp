@@ -10,7 +10,7 @@ public class App {
 				"./spring/basic/beans/constructor/springConstructor.xml");
 		
 		Person john = (Person) ctx.getBean("john");
-		Person tom = (Person) tcx.getBean("john");
+		Person tom = (Person) ctx.getBean("john");
 		john.setSinID(50);
 		
 		System.out.println("john=" + john);
