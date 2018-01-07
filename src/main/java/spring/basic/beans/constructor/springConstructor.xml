@@ -2,13 +2,23 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="initDo" default-destroy-method="destroyDo">
 
 <!-- 
 	    <constructor-arg name="id" value="1"></constructor-arg>
 	    <constructor-arg name="name" value="John Doe"></constructor-arg>
  -->
-    <bean id="john" class="spring.basic.beans.constructor.Person">
+    <bean id="john" class="spring.basic.beans.constructor.Person"
+    	scope="singleton" init-method="onCreate" destroy-method="onDestroy">
+    	<property name="sinID" value="20"></property>
+    	<property name="address" ref="johnAddress"></property>
     </bean>
 
+
+    <bean class="spring.basic.beans.constructor.Address"
+    	id="johnAddress">
+    	<constructor-arg name="street" value="2264 Buttonbush"></constructor-arg>
+    	<constructor-arg name="postal" value="L5L1C5"></constructor-arg>
+    </bean>
 </beans>
