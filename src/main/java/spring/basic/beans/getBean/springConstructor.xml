@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-init-method="initDo" default-destroy-method="destroyDo"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person1" class="spring.basic.beans.getBean.Person" scope="singleton">
+	    <constructor-arg name="id" value="1"></constructor-arg>
+	    <constructor-arg name="name" value="John Doe"></constructor-arg>
+    </bean>
+    <bean id="person2" class="spring.basic.beans.getBean.Person" scope="singleton">
+	    <constructor-arg name="id" value="2"></constructor-arg>
+	    <constructor-arg name="name" value="Sam Parker"></constructor-arg>
+    </bean>
+    <bean id="person3" class="spring.basic.beans.getBean.Person" scope="singleton">
+	    <constructor-arg name="id" value="3"></constructor-arg>
+	    <constructor-arg name="name" value="Mill Stew"></constructor-arg>
+    </bean>
+    <bean id="person4" class="spring.basic.beans.getBean.Person" scope="singleton">
+	    <constructor-arg name="id" value="4"></constructor-arg>
+	    <constructor-arg name="name" value="David Lee"></constructor-arg>
+    </bean>
+
+
+</beans>
