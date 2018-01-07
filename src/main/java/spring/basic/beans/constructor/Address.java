@@ -5,7 +5,8 @@ public class Address {
 	private String street;
 	private String postal;
 	
-
+	public Address(){}
+	
 	public Address(String street, String postal) {
 		super();
 		this.street = street;
@@ -21,11 +22,11 @@ public class Address {
 	}
 
 	public void initDo(){
-		System.out.println("initDo:" + this);
+//		System.out.println("initDo:" + this);
 	}
 	
 	public void destroyDo(){
-		System.out.println("destroyDo:" + this);
+//		System.out.println("destroyDo:" + this);
 	}
 	
 	@Override

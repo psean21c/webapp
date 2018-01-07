@@ -16,7 +16,9 @@ public class App {
 		System.out.println("john=" + john);
 		System.out.println("john=" + tom);
 //		john.talk();
-
+		
+		Address pAddress = (Address) ctx.getBean("pAddress");
+		System.out.println(pAddress.toString());
 		((ClassPathXmlApplicationContext) ctx).close();
 	}
 

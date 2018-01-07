@@ -16,17 +16,18 @@ public class Person {
 		this.name = name;
 	}
 
-	public static Person getInstance(){
+	public static Person getInstance(int id, String name){
 		System.out.println("Sam created by factory method **");
-		return new Person(12,"Sam");
+//		return new Person(12,"Sam");
+		return new Person(id,name);
 	}
 	
 	public void onCreate(){
-		System.out.println("onCreate:" + this);
+//		System.out.println("onCreate:" + this);
 	}
 	
 	public void onDestroy(){
-		System.out.println("onDestroy:" + this);
+//		System.out.println("onDestroy:" + this);
 	}
 
 	public void setAddress(Address address) {
