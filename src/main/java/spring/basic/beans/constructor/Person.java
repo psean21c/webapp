@@ -16,13 +16,11 @@ public class Person {
 		this.name = name;
 	}
 
-	public void initDo(){
-		System.out.println("initDo:" + this);
+	public static Person getInstance(){
+		System.out.println("Sam created by factory method **");
+		return new Person(12,"Sam");
 	}
 	
-	public void destroyDo(){
-		System.out.println("destroyDo:" + this);
-	}
 	public void onCreate(){
 		System.out.println("onCreate:" + this);
 	}

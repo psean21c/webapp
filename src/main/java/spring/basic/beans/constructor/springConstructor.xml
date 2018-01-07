@@ -10,7 +10,8 @@
 	    <constructor-arg name="name" value="John Doe"></constructor-arg>
  -->
     <bean id="john" class="spring.basic.beans.constructor.Person"
-    	scope="singleton" init-method="onCreate" destroy-method="onDestroy">
+    	scope="singleton" init-method="onCreate" destroy-method="onDestroy"
+    	factory-method="getInstance">
     	<property name="sinID" value="20"></property>
     	<property name="address" ref="johnAddress"></property>
     </bean>
