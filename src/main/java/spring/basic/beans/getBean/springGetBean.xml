@@ -6,10 +6,12 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
     <bean id="person1" class="spring.basic.beans.getBean.Person" scope="singleton">
 	    <constructor-arg name="id" value="1"></constructor-arg>
 	    <constructor-arg name="name" value="John Doe"></constructor-arg>
     </bean>
+    <!--  
     <bean id="person2" class="spring.basic.beans.getBean.Person" scope="singleton">
 	    <constructor-arg name="id" value="2"></constructor-arg>
 	    <constructor-arg name="name" value="Sam Parker"></constructor-arg>
@@ -22,6 +24,6 @@
 	    <constructor-arg name="id" value="4"></constructor-arg>
 	    <constructor-arg name="name" value="David Lee"></constructor-arg>
     </bean>
-
+    -->
 
 </beans>

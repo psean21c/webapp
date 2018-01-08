@@ -23,11 +23,14 @@ public class App {
 //		Person person2 = ctx.getBean(Person.class, Person.getInstance(0, null));
 //		System.out.println("person2=" + person2);
 //
-		Person person3 = (Person) ctx.getBean("person1");
-		System.out.println("person3=" + person3);
-
-		Person person4 = ctx.getBean("person4", Person.class);
-		System.out.println("person4=" + person4);
+		Person person2 = ctx.getBean(Person.class, new Person(),new Person(1,"Phil Kulh"));
+		System.out.println("person2=" + person2);
+//
+//		Person person3 = (Person) ctx.getBean("person1");
+//		System.out.println("person3=" + person3);
+//
+//		Person person4 = ctx.getBean("person4", Person.class);
+//		System.out.println("person4=" + person4);
 		
 		
 		((ClassPathXmlApplicationContext) ctx).close();

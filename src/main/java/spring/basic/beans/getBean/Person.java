@@ -16,7 +16,6 @@ public class Person {
 
 	public static Person getInstance(int id, String name){
 		System.out.println("Sam created by factory method **");
-//		return new Person(12,"Sam");
 		return new Person(id,name);
 	}
 	
