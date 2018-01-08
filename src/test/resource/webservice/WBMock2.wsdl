@@ -3,22 +3,10 @@
 
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.emf.cibc.com/emb/wbfxr">
-      <xsd:element name="GetRateInput">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:element name="in" type="xsd:string"/>
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:element name="GetRateOutput">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:element name="out" type="xsd:string"/>
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
+			<xsd:import namespace="http://emf.cibc.com/emb/wbfxr/"
+				schemaLocation="wbfxr.xsd">
+			</xsd:import>
     </xsd:schema>
-        
   </wsdl:types>
   
   <wsdl:message name="GetRateInput">
