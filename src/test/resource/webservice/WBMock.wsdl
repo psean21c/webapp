@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--  
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
-				xmlns:tns="http://www.emf.cibc.com/emb/wbfxr" 
-				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
-				xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WBMock" 
-				targetNamespace="http://www.emf.cibc.com/emb/wbfxr"
-				xmlns:wbfxr="http://emf.cibc.com/emb/wbfxr">
--->
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/WBMock/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WBMock" targetNamespace="http://www.example.org/WBMock/" xmlns:wbfxr="http://emf.cibc.com/emb/wbfxr">
+<wsdl:definitions name="FXRateService" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:tns="http://www.example.org/WBMock/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/WBMock/" 
+xmlns:wbfxr="http://emf.cibc.com/emb/wbfxr">
 
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.emf.cibc.com/emb/wbfxr">
 			<xsd:import namespace="http://emf.cibc.com/emb/wbfxr/"
-				schemaLocation="wbfxr.xsd">
+				schemaLocation="../xsd/wbfxr.xsd">
 			</xsd:import>
     </xsd:schema>
   </wsdl:types>
@@ -44,8 +42,8 @@
     </wsdl:operation>
   </wsdl:binding>
   
-  <wsdl:service name="WBMock">
-    <wsdl:port binding="tns:WBMockSOAP" name="WBMockSOAP">
+  <wsdl:service name="FXRateService">
+    <wsdl:port binding="tns:FXRateServiceImplPortBinding" name="FXRateServiceImplPort">
       <soap:address location="http://localhost:8092"/>
     </wsdl:port>
   </wsdl:service>
