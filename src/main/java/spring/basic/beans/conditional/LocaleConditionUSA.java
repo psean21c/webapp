@@ -9,7 +9,6 @@ import java.util.Locale;
 public class LocaleConditionUSA implements Condition {
 
     public boolean matches (ConditionContext context, AnnotatedTypeMetadata metadata) {
-        return Locale.getDefault()
-                     .equals(Locale.US);
+        return Locale.getDefault().equals(Locale.US);
     }
 }
