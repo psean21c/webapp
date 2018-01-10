@@ -1,10 +1,10 @@
-package spring.basic.beans.property;
+package spring.property.xml;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import spring.basic.beans.property.Doe;
-import spring.basic.beans.property.Tao;
+import spring.property.xml.Doe;
+import spring.property.xml.Tao;
 
 import java.lang.String;
 
@@ -12,7 +12,7 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("./spring/basic/beans/property/springDoe.xml");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("./spring/property/xml/springDoe.xml");
 		
 		Doe doe = (Doe) ctx.getBean("doe");
 		Tao tao = doe.getTao();

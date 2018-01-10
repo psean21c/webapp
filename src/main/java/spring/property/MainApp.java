@@ -11,6 +11,8 @@ public class MainApp {
 		BasicDataSource data = (BasicDataSource) context.getBean("dataSource");
 
 		System.out.println("datasource:" + data.getDriverClassName());
+		
+		((ClassPathXmlApplicationContext) context).close();
 
 	}
 

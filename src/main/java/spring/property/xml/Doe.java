@@ -1,4 +1,4 @@
-package spring.basic.beans.property;
+package spring.property.xml;
 
 public class Doe {
 

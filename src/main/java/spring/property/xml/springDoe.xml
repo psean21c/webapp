@@ -4,11 +4,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="doe" class="spring.basic.beans.property.Doe">
-	    <constructor-arg type="spring.basic.beans.property.Tao" ref="tao"></constructor-arg>
+    <bean id="doe" class="spring.property.xml.Doe">
+	    <constructor-arg type="spring.property.xml.Tao" ref="tao"></constructor-arg>
     </bean>
 
-    <bean id="tao" class="spring.basic.beans.property.Tao">
+    <bean id="tao" class="spring.property.xml.Tao">
     <property name="seq" value="2"></property>
     </bean>
 </beans>
