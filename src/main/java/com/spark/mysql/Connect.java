@@ -3,8 +3,17 @@ package com.spark.mysql;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-
-// Need to import mysql-connector-java-.5.1.45.jar
+/***
+ * 
+ * @author sungmin.park
+ *  1) Need to import mysql-connector-java-.5.1.45.jar
+ * 
+ *  2) start MySQL and login to the console
+ *  - C:\dev\mysql-5.6.38-winx64\bin\mysqld
+ *  - 
+ *  SET PASSWORD FOR 'root'@'localhost' = PASSWORD('math6461');
+ *  
+ */
 
 public class Connect {
 	public static void main(String[] args) {
