@@ -8,6 +8,12 @@ public class CronApp {
 	public static void main(String args[]) {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("./spring/cron/quartz-context.xml");
 		
-//		((AbstractApplicationContext)context).close();
+		try {
+			// milisecond
+			Thread.sleep(10000L);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		((AbstractApplicationContext)context).close();
 	}
 }
