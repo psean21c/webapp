@@ -16,6 +16,7 @@
   	    <java.version>1.8</java.version>		
 		<tomcatDir>C:/dev/apache-tomcat-7.0.82/webapps</tomcatDir>
 		<webDir>C:/Users/sungmin.park/git/spark/webapp/target</webDir> <!-- Unix base -->
+        <quartz.version>2.2.1</quartz.version>		
 <!--  		
         <webDir>C:\Users\sungmin.park\git\spark\webapp\target</webDir> Window base
 -->
@@ -137,8 +138,14 @@
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-jdbc</artifactId>
 		<version>4.2.2.RELEASE</version>
-	</dependency>        
-
+	</dependency>  
+	      
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context-support</artifactId>
+          <version>4.2.2.RELEASE</version>
+      </dependency>
+        
   	<dependency>
   		<groupId>mysql</groupId>
   		<artifactId>mysql-connector-java</artifactId>
@@ -173,6 +180,13 @@
 		</dependency>
 		-->
 		
+        <!-- Quartz framework -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz.version}</version>
+        </dependency>
+        		
         <!-- UnitTest / Mockito -->
 		<dependency>
 			<artifactId>junit</artifactId>
@@ -187,6 +201,7 @@
 		    <version>1.10.19</version>
 		    <scope>test</scope>
 		</dependency>        
+
 
 		
     </dependencies>
