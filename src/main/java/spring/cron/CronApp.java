@@ -9,8 +9,8 @@ public class CronApp {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("./spring/cron/quartz-context.xml");
 		
 		try {
-			// milisecond
-			Thread.sleep(10000L);
+			// milisecond : 10000 = 10 seconds
+			Thread.sleep(30000L);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
