@@ -3,7 +3,13 @@ package spring.sandbox;
 public class Foo {
 	public String name;
 	
-	public Bar bar;
+//	public Bar bar;
+	
+	public Foo(){}
+	
+	public Foo(String name){
+		this.name = name;
+	}
 	
 	public String getName() {
 		return name;
@@ -13,11 +19,11 @@ public class Foo {
 		this.name = name;
 	}
 
-	public Bar getBar() {
-		return bar;
-	}
-
-	public void setBar(Bar bar) {
-		this.bar = bar;
-	}
+//	public Bar getBar() {
+//		return bar;
+//	}
+//
+//	public void setBar(Bar bar) {
+//		this.bar = bar;
+//	}
 }

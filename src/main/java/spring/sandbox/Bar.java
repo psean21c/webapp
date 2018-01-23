@@ -2,14 +2,16 @@ package spring.sandbox;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Bar {
 
 	public String name;
 
 	public Foo foo;
 	
-	public Bar(){}
+	public Bar(Foo foo){
+		this.foo = foo;
+	}
 	
 	public Foo getFoo() {
 		return foo;

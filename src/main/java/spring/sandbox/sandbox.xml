@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:jms="http://www.springframework.org/schema/jms"
-	xmlns:beans="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
     <bean id="bar" class="spring.sandbox.Bar">
-	    <property name="name" value="bar"></property>
+    	<constructor-arg name="foo" type="spring.sandbox.Foo"
+    		ref="foo">
+    	</constructor-arg>
     </bean>
+	<bean id="foo" class="spring.sandbox.Foo">
+		<property name="name" value="foo1"></property>
+	</bean>
     
 <!--  
+	    <property name="name" value="bar"></property>
+		<property name="name" value="Foo1"></property>
+
+
     <bean id="bar" class="spring.sandbox.Bar" abstract="false">
 	    <property name="name" value="bar"></property>
 	    <property name="foo" ref="foo"></property>
@@ -24,7 +31,4 @@
 -->
 
 	
-	<bean id="foo" class="spring.sandbox.Foo">
-		<property name="name" value="Foo1"></property>
-	</bean>
 </beans>
