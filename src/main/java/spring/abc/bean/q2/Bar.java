@@ -5,7 +5,7 @@ public class Bar {
 	public String name;
 
 	public Foo foo;
-	
+//	
 	public Bar(Foo foo){
 		this.foo = foo;
 	}
