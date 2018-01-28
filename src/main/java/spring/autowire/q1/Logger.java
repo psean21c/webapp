@@ -1,9 +1,5 @@
 package spring.autowire.q1;
 
-/*
- * Dummy implementation of logger.
- */
-
 public class Logger {
 
 	private ConsoleWriter consoleWriter;

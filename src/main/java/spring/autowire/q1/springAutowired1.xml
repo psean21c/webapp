@@ -3,12 +3,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<!-- Question: It will throw Exception - java.lang.NullPointerException
+     Requirement: Use autowire = 'byType' and Fix the problem and print below
+***************************
+Console write:Hello there
+Write to file: Hi again
+***************************
+ -->
 
-
-	<bean id="logger" class="spring.autowire.q1.Logger"	autowire="byType">
-
+	<bean id="logger" class="spring.autowire.q1.Logger">
 	</bean>
-
 
 	<bean id="consolewriter" class="spring.autowire.q1.ConsoleWriter">
 	</bean>
@@ -16,4 +20,10 @@
 	<bean id="filewriter" class="spring.autowire.q1.FileWriter">
 	</bean>
 	
+<!--  Answer: 
+
+	<bean id="logger" class="spring.autowire.q1.Logger"	autowire="byType">
+	</bean>
+
+-->	
 </beans>
