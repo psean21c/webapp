@@ -3,8 +3,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!-- Question: It will throw Exception - java.lang.NullPointerException
-     Requirement: Use autowire = 'byType' and Fix the problem and print below
+<!--  It will throw Exception - java.lang.NullPointerException
+
+Question-1: Use autowire = 'byType' and Fix the problem and print below
 ***************************
 Console write:Hello there
 Write to file: Hi again
@@ -20,10 +21,20 @@ Write to file: Hi again
 	<bean id="filewriter" class="spring.autowire.q1.FileWriter">
 	</bean>
 	
-<!--  Answer: 
+<!--  Answer-1: 
 
 	<bean id="logger" class="spring.autowire.q1.Logger"	autowire="byType">
 	</bean>
 
+ Answer-2: 
+ 
+	<bean id="logger" class="spring.autowire.q1.Logger" autowire="byName">
+	</bean>
+	
+	// Make sure the camelCase for ids.
+	id="consolewriter" >> 	id="consoleWriter"
+	id="filewriter" >> 	id="fileWriter"
+	
+ 
 -->	
 </beans>
