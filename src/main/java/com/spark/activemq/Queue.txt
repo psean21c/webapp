@@ -1,0 +1,67 @@
+
+            Connection Factory
+                    | 
+				    | Creates
+				    | 
+                Connection
+                    | 
+				    | Creates
+				    | 
+Producer <------ Session ------> Consumer
+                    | 
+				    | Creates
+				    | 
+                [Message]
+  
+
+
+// 1) Connection Factory
+InitialContextjndiContext = new InitialContext();
+// look up for the connection factory 
+ConnectionFactory factory = jndiContext.lookup(factoryName);
+
+// 2) Create Connection
+Connection conn = factory.createConnection();
+
+// 3) Create Session
+Session session = conn.createSession(false, Session.AUTO_ACKNOWLEDGE);
+// Create a destination object
+Desination dest1 = (Queue) jndiContext.lookup("/jms/myQueue"); // PointToPoint
+Desination dest2 = (Topic) jndiContext.lookup("/jms/myTopic"); // Publish/Subscribe
+
+// 4) Producer / Consumer
+// Create a producer
+MessageProducer producer = session.createProducer(dest1);
+Message m = session.createTextMessage();
+m.setText("another Message");
+producer.send(m);
+
+// 4-2)
+MessageConsumer consumer = session.createConsumer(dest1);
+conn.start();
+Message m = consumer.receive();
+
+// 4-3)
+MessageListener listener = new myListener();
+consumer.setMessageListener(listener);
+
+public void onMessage(Message msg){
+  // read the message and do something
+}
+// 5) Closing connection
+conn.close();
+
+
+JmsTemplate class : used for message production / synchronous message reception.
+
+For asynchronous reception similar to Java EE's message-driven bean(MDB) style,
+Spring provides a number of message listener containers that are used to create 
+MDPs(Message Driven POJO's)
+
+xmlns:jms="http://www.springframework.org/schema/jms"
+xsi:schemLocation
+"http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd"
+
+org.springframework.jms-3.0.1.RELEASE-A.jar
+activemq-all-5.4.3.jar
+
