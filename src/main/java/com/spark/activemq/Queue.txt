@@ -26,8 +26,8 @@ Connection conn = factory.createConnection();
 // 3) Create Session
 Session session = conn.createSession(false, Session.AUTO_ACKNOWLEDGE);
 // Create a destination object
-Desination dest1 = (Queue) jndiContext.lookup("/jms/myQueue"); // PointToPoint
-Desination dest2 = (Topic) jndiContext.lookup("/jms/myTopic"); // Publish/Subscribe
+Destination dest1 = (Queue) jndiContext.lookup("/jms/myQueue"); // PointToPoint
+Destination dest2 = (Topic) jndiContext.lookup("/jms/myTopic"); // Publish/Subscribe
 
 // 4) Producer / Consumer
 // Create a producer
