@@ -158,6 +158,18 @@
 		    <version>1.7.21</version>
       </dependency> 		
 
+		<dependency>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>mqjms</artifactId>
+			<version>6.0.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>mq</artifactId>
+			<version>6.0.0.0</version>
+		</dependency>
+		
       <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
       <dependency>
             <groupId>org.apache.activemq</groupId>

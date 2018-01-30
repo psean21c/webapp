@@ -1,4 +1,4 @@
-package com.spark.activemq;
+package com.spark.mq.activemq;
 
 import javax.jms.Connection;
 import javax.jms.Destination;

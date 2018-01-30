@@ -1,4 +1,4 @@
-package com.spark.activemq;
+package com.spark.mq.activemq;
 
 public class QueueApp {
 

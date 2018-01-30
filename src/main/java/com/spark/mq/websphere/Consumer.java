@@ -1,38 +1,44 @@
-package com.spark.activemq;
+package com.spark.mq.websphere;
 
 import javax.jms.Connection;
-import javax.jms.DeliveryMode;
 import javax.jms.Destination;
 import javax.jms.JMSException;
-import javax.jms.MessageProducer;
+import javax.jms.Message;
+import javax.jms.MessageConsumer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-public class Producer {
+public class Consumer {
 
 	public static void main(String[] args) {
 		try {
-			// Create a ConnectionFactory
+			//
 			ActiveMQConnectionFactory factory = new ActiveMQConnectionFactory("tcp://192.168.40.144:61616");
 
-			// Create a connection
+			//
 			Connection conn = factory.createConnection();
 			conn.start();
 			
-			// Create a Session
+			//
 			Session session = conn.createSession(false, Session.AUTO_ACKNOWLEDGE);
+			
+			// Create a destination 
+			Destination dest1 = session.createQueue("HELLO.TESTQ");
+			
+			// Create a MessageConsumer from the session to the Topic / Queue
+			MessageConsumer consumer = session.createConsumer(dest1);
+			//consumer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 
-			// Create a destination (Topic / Queue)
-			Destination dest1 = session.createQueue("HELLO.Q");
-			MessageProducer producer = session.createProducer(dest1);
-			producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
-
-			String txt = "Hello World! " + Thread.currentThread().getName();
-			TextMessage message = session.createTextMessage(txt);
-
-			producer.send(message);
+			Message message = consumer.receive(1000);
+			
+			if(message instanceof TextMessage){
+				TextMessage txt = (TextMessage) message;
+				System.out.println("received:" + txt);
+			} else {
+				System.out.println("received:" + message);
+			}
 
 			session.close();
 			conn.close();
