@@ -13,6 +13,13 @@ import java.sql.DriverManager;
  *  - 
  *  SET PASSWORD FOR 'root'@'localhost' = PASSWORD('math6461');
  *  
+ *  ## Start DB
+ *  DOS> cd C:\dev\mysql-5.6.38-winx64\bin\mysqld
+ *  DOS> mysqld.exe
+ *  
+ *  ## Access to Query
+ *  DOS> mysql -u root -p
+ *  Enter password: math6461 *  
  */
 
 public class Connect {
