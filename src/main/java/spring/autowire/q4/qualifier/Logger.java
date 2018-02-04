@@ -1,14 +1,12 @@
 package spring.autowire.q4.qualifier;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Logger {
 
 	private ConsoleWriter consoleWriter;
 	
 	@Autowired
-	@Qualifier("blackConsoleWriter")
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}
