@@ -7,12 +7,24 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 <!--  
-Question-1: We don't define consoleWriter bean in this xml.
+Question-1: We define TWO consoleWriter beans in this xml.
+So it will throw an Exception below.
 
+org.springframework.beans.factory.BeanCreationException: 
+...
+nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: 
+No qualifying bean of type [spring.autowire.q4.qualifier.ConsoleWriter] is defined: 
+expected single matching bean but found 2: consoleWriter1,consoleWriter2
 
  -->
 
 	<bean id="logger" class="spring.autowire.q4.qualifier.Logger">
+	</bean>
+
+	<bean id="consoleWriter1" class="spring.autowire.q4.qualifier.ConsoleWriter">
+	</bean>
+
+	<bean id="consoleWriter2" class="spring.autowire.q4.qualifier.ConsoleWriter">
 	</bean>
 
 

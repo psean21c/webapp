@@ -8,7 +8,7 @@ public class Logger {
 	
 	private FileWriter fileWriter;
 
-	@Autowired(required=false)
+	@Autowired
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}

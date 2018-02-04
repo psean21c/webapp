@@ -12,16 +12,19 @@ Question-1: We don't define consoleWriter bean in this xml.
 	</bean>
 	So it will throw the error below.
 	
+************************************************************************************	
 org.springframework.beans.factory.BeanCreationException: 
 ...
 nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: 
 No qualifying bean of type [spring.autowire.q3.ConsoleWriter] found for dependency: 
 expected at least 1 bean which qualifies as autowire candidate for this dependency. 
+************************************************************************************
 
 Assign proper annotation argument in order to print message below. 
-
+************************************************
 not write console because consoleWriter is null
 Write to file: Hi again
+************************************************
 
  -->
 
