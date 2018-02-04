@@ -11,7 +11,7 @@ public class App {
 
 		Logger logger = (Logger)context.getBean("logger");
 
-		logger.writeConsole("Hello there: ");
+		logger.writeConsole("\tHello: ");
 		
 		((ConfigurableApplicationContext) context).close();
 	}

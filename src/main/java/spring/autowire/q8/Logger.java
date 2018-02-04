@@ -7,15 +7,20 @@ import org.springframework.stereotype.Component;
 public class Logger {
 
 	private ConsoleWriter consoleWriter;
+//	private int id = 0;
 	
 	@Autowired
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}
+	
+//	public void setId(int id){
+//		this.id = id;
+//	}
 
 	public void writeConsole(String text) {
 		if(consoleWriter != null){
-			consoleWriter.write(text + consoleWriter.getName());
+			consoleWriter.write(consoleWriter.getName() + text);
 		} else {
 			System.out.println("not write console because consoleWriter is null");
 		}
