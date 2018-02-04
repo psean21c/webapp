@@ -17,8 +17,7 @@ public class ConsoleWriter implements LogWriter {
 		return name;
 	}
 
-	@Autowired
-	public void setName(@Value("blueConsole") String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	

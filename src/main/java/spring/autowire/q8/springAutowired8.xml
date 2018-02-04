@@ -8,11 +8,11 @@
 
 <!--  
 Question-1: All beans definition were removed in this xml.
-	<bean id="logger" class="spring.autowire.q4.qualifier.Logger">	</bean>
-Try to print out message below using <component-scan/>
+
+Try to print out value - blueConsole -  inside the message below 
 
 ************************************************************
-Write to console: Hello there: null
+Write to console: blueConsole	Hello: 
 ************************************************************
  -->
 
@@ -20,17 +20,13 @@ Write to console: Hello there: null
 	<context:component-scan base-package="spring.autowire.q8"></context:component-scan>
 
 <!--  Answer-1: 
-1) Configure component-scan bleow
-	
-2) Annotate @Component in the class
 
-@Component
-public class Logger {
+Put 2 annotations (@Autowired + @Value) in the ConsoleWriter.java
 
-@Component
-public class ConsoleWriter implements LogWriter {
-
-
+	@Autowired
+	public void setName(@Value("blueConsole") String name) {
+		this.name = name;
+	}
 
 -->	
 </beans>
