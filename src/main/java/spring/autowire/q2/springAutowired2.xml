@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!--  
+Question-1: 
+	It is expected to autowired 2 beans (ConsoleWriter and FileWriter)
+Because I have already placed @Autowird annotation in the Logger.java 
+However, It will throw Exception - java.lang.NullPointerException
+Try to configure annotation for autowired in this xml file.
+	  
+
+ -->
+
+	<bean id="logger" class="spring.autowire.q2.Logger">
+	</bean>
+
+	<bean id="consoleWriter" class="spring.autowire.q2.ConsoleWriter">
+	</bean>
+
+	<bean id="fileWriter" class="spring.autowire.q2.FileWriter">
+	</bean>
+	
+<!--  Answer-1: 
+	<context:annotation-config></context:annotation-config>
+-->	
+</beans>
