@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!--  
+Question-1: All beans definition were removed in this xml.
+	<bean id="logger" class="spring.autowire.q4.qualifier.Logger">	</bean>
+Try to print out message below using <component-scan/>
+
+************************************************************
+Write to console: Hello there: null
+************************************************************
+ -->
+
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="spring.autowire.q8"></context:component-scan>
+
+<!--  Answer-1: 
+1) Configure component-scan bleow
+	
+2) Annotate @Component in the class
+
+@Component
+public class Logger {
+
+@Component
+public class ConsoleWriter implements LogWriter {
+
+
+
+-->	
+</beans>
