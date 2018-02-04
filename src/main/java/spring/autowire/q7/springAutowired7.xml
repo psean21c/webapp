@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!--  
+Question-1: 
+
+	@Inject
+	@Named(value="colorConsoleWriter")
+	public void setConsoleWriter(ConsoleWriter writer) {
+		this.consoleWriter = writer;
+	}	
+ -->
+
+	<bean id="logger" class="spring.autowire.q7.Logger">
+	</bean>
+
+
+	<bean id="blackConsoleWriter" class="spring.autowire.q7.ConsoleWriter">
+		<property name="name" value="black"></property>
+	</bean>
+
+	<bean id="colorConsoleWriter" class="spring.autowire.q7.ConsoleWriter">
+		<property name="name" value="color"></property>
+	</bean>
+
+	<context:annotation-config></context:annotation-config>
+
+<!--  Answer-1: 
+
+1) Update POM file - adding dependency
+
+	    ***  JSR-330 JAVAX.INJECT 
+		<dependency>
+		    <groupId>javax.inject</groupId>
+		    <artifactId>javax.inject</artifactId>
+		    <version>1</version>
+		</dependency>
+
+2) Annotate @Inject	
+	@Inject
+	@Named(value="colorConsoleWriter")
+	public void setConsoleWriter(ConsoleWriter writer) {
+		this.consoleWriter = writer;
+	}	
+	
+-->	
+</beans>
