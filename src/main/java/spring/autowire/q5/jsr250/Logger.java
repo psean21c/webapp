@@ -1,18 +1,27 @@
 package spring.autowire.q5.jsr250;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 public class Logger {
 
 	private ConsoleWriter consoleWriter;
 	
-	@Autowired
-	@Qualifier("blackConsoleWriter")
+	@Resource
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}
+
+	@PostConstruct
+	public void init(){
+		System.out.println("init");
+	}
 	
+	@PreDestroy
+	public void destroy(){
+		System.out.println("destroy");
+	}
 	
 	public void writeConsole(String text) {
 		if(consoleWriter != null){
