@@ -7,11 +7,13 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 <!--  
-Question-1: 
+Question-1: All beans definition were removed in this xml.
+	<bean id="logger" class="spring.autowire.q4.qualifier.Logger">	</bean>
+Try to print out message below using <component-scan/>
 
-
+************************************************************
 Write to console: Hello there: null
-
+************************************************************
  -->
 
 	<context:annotation-config></context:annotation-config>
@@ -19,6 +21,7 @@ Write to console: Hello there: null
 
 <!--  Answer-1: 
 
+	<context:component-scan base-package="spring.autowire.q7"></context:component-scan>
 	
 -->	
 </beans>
