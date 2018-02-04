@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("./spring/autowire/q5/jsr250/springAutowired4.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("./spring/autowire/q5/jsr250/springAutowired5.xml");
 
 		Logger logger = (Logger)context.getBean("logger");
 
