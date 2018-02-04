@@ -9,44 +9,16 @@
 <!--  
 Question-1: 
 
-	@Inject
-	@Named(value="colorConsoleWriter")
-	public void setConsoleWriter(ConsoleWriter writer) {
-		this.consoleWriter = writer;
-	}	
+
+Write to console: Hello there: null
+
  -->
 
-	<bean id="logger" class="spring.autowire.q7.Logger">
-	</bean>
-
-
-	<bean id="blackConsoleWriter" class="spring.autowire.q7.ConsoleWriter">
-		<property name="name" value="black"></property>
-	</bean>
-
-	<bean id="colorConsoleWriter" class="spring.autowire.q7.ConsoleWriter">
-		<property name="name" value="color"></property>
-	</bean>
-
 	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="spring.autowire.q7"></context:component-scan>
 
 <!--  Answer-1: 
 
-1) Update POM file - adding dependency
-
-	    ***  JSR-330 JAVAX.INJECT 
-		<dependency>
-		    <groupId>javax.inject</groupId>
-		    <artifactId>javax.inject</artifactId>
-		    <version>1</version>
-		</dependency>
-
-2) Annotate @Inject	
-	@Inject
-	@Named(value="colorConsoleWriter")
-	public void setConsoleWriter(ConsoleWriter writer) {
-		this.consoleWriter = writer;
-	}	
 	
 -->	
 </beans>

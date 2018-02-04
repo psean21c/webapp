@@ -1,16 +1,14 @@
 package spring.autowire.q7;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
-import javax.inject.Inject;
-import javax.inject.Named;
-
+@Component
 public class Logger {
 
 	private ConsoleWriter consoleWriter;
 	
-	@Inject
-	@Named(value="colorConsoleWriter")
+	@Autowired
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}
