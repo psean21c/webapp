@@ -1,9 +1,8 @@
 package spring.autowire.q7;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
+
 public class Logger {
 
 	private ConsoleWriter consoleWriter;
@@ -13,8 +12,6 @@ public class Logger {
 		this.consoleWriter = writer;
 	}
 
-
-	
 	public void writeConsole(String text) {
 		if(consoleWriter != null){
 			consoleWriter.write(text + consoleWriter.getName());

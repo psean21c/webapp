@@ -17,11 +17,20 @@ Write to console: Hello there: null
  -->
 
 	<context:annotation-config></context:annotation-config>
-	<context:component-scan base-package="spring.autowire.q7"></context:component-scan>
 
 <!--  Answer-1: 
-
+1) Configure component-scan bleow
 	<context:component-scan base-package="spring.autowire.q7"></context:component-scan>
 	
+2) Annotate @Component in the class
+
+@Component
+public class Logger {
+
+@Component
+public class ConsoleWriter implements LogWriter {
+
+
+
 -->	
 </beans>
