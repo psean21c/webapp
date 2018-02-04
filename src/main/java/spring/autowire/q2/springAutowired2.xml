@@ -24,7 +24,7 @@ Try to configure annotation for autowired in this xml file.
 
 	<bean id="fileWriter" class="spring.autowire.q2.FileWriter">
 	</bean>
-	
+
 <!--  Answer-1: 
 	<context:annotation-config></context:annotation-config>
 -->	
