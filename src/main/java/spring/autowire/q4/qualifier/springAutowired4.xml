@@ -18,18 +18,21 @@ No qualifying bean of type [spring.autowire.q4.qualifier.ConsoleWriter] is defin
 expected single matching bean but found 2: consoleWriter1,consoleWriter2
 ************************************************************************************	
 
-Fix the problem using annotation @Qualifier
+Fix the problem using annotation @Qualifier in order to print below.
 
+************************************************************
+Write to console: Hello there: black
+************************************************************	
  -->
 
 	<bean id="logger" class="spring.autowire.q4.qualifier.Logger">
 	</bean>
 
-	<bean id="consoleWriter1" class="spring.autowire.q4.qualifier.ConsoleWriter">
+	<bean id="blackConsoleWriter" class="spring.autowire.q4.qualifier.ConsoleWriter">
 		<property name="name" value="black"></property>
 	</bean>
 
-	<bean id="consoleWriter2" class="spring.autowire.q4.qualifier.ConsoleWriter">
+	<bean id="ColorConsoleWriter" class="spring.autowire.q4.qualifier.ConsoleWriter">
 		<property name="name" value="color"></property>
 	</bean>
 
@@ -40,7 +43,7 @@ Fix the problem using annotation @Qualifier
 <!--  Answer-1: In the Logger.java
 
 	@Autowired
-	@Qualifier("consoleWriter2")
+	@Qualifier("blackConsoleWriter")
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}

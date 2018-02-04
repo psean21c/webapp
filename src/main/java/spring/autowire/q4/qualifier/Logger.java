@@ -8,7 +8,7 @@ public class Logger {
 	private ConsoleWriter consoleWriter;
 	
 	@Autowired
-	@Qualifier("consoleWriter2")
+	@Qualifier("blackConsoleWriter")
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}
