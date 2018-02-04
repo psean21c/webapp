@@ -10,11 +10,15 @@
 Question-1: We define TWO consoleWriter beans in this xml.
 So it will throw an Exception below.
 
+************************************************************************************	
 org.springframework.beans.factory.BeanCreationException: 
 ...
 nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: 
 No qualifying bean of type [spring.autowire.q4.qualifier.ConsoleWriter] is defined: 
 expected single matching bean but found 2: consoleWriter1,consoleWriter2
+************************************************************************************	
+
+Fix the problem using annotation @Qualifier
 
  -->
 
@@ -22,20 +26,21 @@ expected single matching bean but found 2: consoleWriter1,consoleWriter2
 	</bean>
 
 	<bean id="consoleWriter1" class="spring.autowire.q4.qualifier.ConsoleWriter">
+		<property name="name" value="black"></property>
 	</bean>
 
 	<bean id="consoleWriter2" class="spring.autowire.q4.qualifier.ConsoleWriter">
+		<property name="name" value="color"></property>
 	</bean>
 
 
-	<bean id="fileWriter" class="spring.autowire.q4.qualifier.FileWriter">
-	</bean>
 
 	<context:annotation-config></context:annotation-config>
 
 <!--  Answer-1: In the Logger.java
 
-	@Autowired(required=false)
+	@Autowired
+	@Qualifier("consoleWriter2")
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}
