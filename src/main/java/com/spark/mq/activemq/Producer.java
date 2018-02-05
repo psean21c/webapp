@@ -10,6 +10,14 @@ import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+/***
+ * 
+
+It was only successfully tested on CentOS box. 
+It was timed out when Producer.java tried to send message to the AcitveMQ running on Virtual box.
+
+ *
+ */
 public class Producer {
 
 	public static void main(String[] args) {

@@ -1,4 +1,13 @@
+/**********************************************************************
+Test Log
+**********************************************************************/
+[Feb-24, 2018]
+It was only successfully tested on CentOS box. 
+It was timed out when Producer.java tried to send message to the AcitveMQ running on Virtual box.
 
+/**********************************************************************
+Active MQ Diagram
+**********************************************************************/
             Connection Factory
                     | 
 				    | Creates
@@ -14,6 +23,9 @@ Producer <------ Session ------> Consumer
                 [Message]
   
 
+/**********************************************************************
+Java Implementation
+**********************************************************************/
 
 // 1) Connection Factory
 InitialContextjndiContext = new InitialContext();
@@ -51,6 +63,9 @@ public void onMessage(Message msg){
 // 5) Closing connection
 conn.close();
 
+/**********************************************************************
+
+**********************************************************************/
 
 JmsTemplate class : used for message production / synchronous message reception.
 
@@ -58,10 +73,40 @@ For asynchronous reception similar to Java EE's message-driven bean(MDB) style,
 Spring provides a number of message listener containers that are used to create 
 MDPs(Message Driven POJO's)
 
+Add namespaces inside <beans ..> </beans> tags
+
 xmlns:jms="http://www.springframework.org/schema/jms"
-xsi:schemLocation
+xsi:schemLocation =
 "http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd"
 
 org.springframework.jms-3.0.1.RELEASE-A.jar
 activemq-all-5.4.3.jar
+
+/**********************************************************************
+
+**********************************************************************/
+
+
+<bean id="connectionFactory" class="">
+ <contructor-arg value ="failover:(tcp://localhost:61616)"/>
+</bean>
+
+<bean id="" class="">
+ <constructor-arg ref="connectionFactory"/>
+ <property name="sessionTransacted" value="false"/>
+ <property name="receiveTimeout" value="5000"/>
+</bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,81 +1,79 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-		
-    <modelVersion>4.0.0</modelVersion>
-    <packaging>war</packaging>
-    <name>Java First demo using JAX-WS APIs</name>
-    <description>Java First demo using JAX-WS APIs</description>
-		
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>war</packaging>
+	<name>Java First demo using JAX-WS APIs</name>
+	<description>Java First demo using JAX-WS APIs</description>
+
 	<groupId>com.zafin.spark</groupId>
-    <artifactId>jaxws</artifactId>
+	<artifactId>jaxws</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-    <properties>
+
+	<properties>
 		<cxf.version>2.7.10</cxf.version>
-  	    <java.version>1.8</java.version>		
+		<java.version>1.8</java.version>
 		<tomcatDir>C:/dev/apache-tomcat-7.0.82/webapps</tomcatDir>
 		<webDir>C:/Users/sungmin.park/git/spark/webapp/target</webDir> <!-- Unix base -->
-        <quartz.version>2.2.1</quartz.version>		
-<!--  		
-        <webDir>C:\Users\sungmin.park\git\spark\webapp\target</webDir> Window base
--->
-    </properties>
+		<quartz.version>2.2.1</quartz.version>
+		<!-- <webDir>C:\Users\sungmin.park\git\spark\webapp\target</webDir> Window 
+			base -->
+	</properties>
 
-    <build>
-    	<!-- build name for war file -->
-        <finalName>zafinWS</finalName>
+	<build>
+		<!-- build name for war file -->
+		<finalName>zafinWS</finalName>
 
-    	<!-- resource -->
-    	<resources>
-    		<resource>
-    			<directory>src/main/java</directory>
-    		</resource>
-    		<resource>
-    			<directory>src/test/java</directory>
-    		</resource>
-    	</resources>
+		<!-- resource -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+			</resource>
+			<resource>
+				<directory>src/test/java</directory>
+			</resource>
+		</resources>
 
-	    <pluginManagement>
-	      <plugins>
-	        <plugin>
-	          <groupId>org.apache.tomcat.maven</groupId>
-	          <artifactId>tomcat7-maven-plugin</artifactId>
-	          <version>2.1</version>
-	        </plugin>
-	      </plugins>
-	    </pluginManagement>
-    
-    	
-        <plugins>
-        	<!-- maven-compiler -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+
+		<plugins>
+			<!-- maven-compiler -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
-			</plugin>            
-            
-        	<!-- maven cleaner -->
-			<plugin>
-			    <artifactId>maven-clean-plugin</artifactId>
-			    <version>2.6.1</version>
-			    <configuration>
-			      <filesets>
-			        <fileset>
-			          <directory>src/main/java/com/zafin</directory>
-			        </fileset>
-			      </filesets>
-			    </configuration>
-			</plugin>			
+			</plugin>
 
-        	<!-- maven tomcat -->
+			<!-- maven cleaner -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.6.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>src/main/java/com/zafin</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+			<!-- maven tomcat -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.1</version>
 			</plugin>
-			
-        	<!-- maven antrun -->
+
+			<!-- maven antrun -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -88,77 +86,65 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
-						<tasks>
-							<echo> ${basedir}/ antrun... running !!! - spark</echo>
-							<copy file="${webDir}/zafinWS.war" tofile="${tomcatDir}/zafinWS.war"/>
-						</tasks>
+							<tasks>
+								<echo> ${basedir}/ antrun... running !!! - spark</echo>
+								<copy file="${webDir}/zafinWS.war" tofile="${tomcatDir}/zafinWS.war" />
+							</tasks>
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>           
-        	<!-- cxf code generator
-			<plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>3.1.6</version>
+			</plugin>
+			<!-- cxf code generator <plugin> <groupId>org.apache.cxf</groupId> <artifactId>cxf-codegen-plugin</artifactId> 
+				<version>3.1.6</version> <executions> <execution> <id>generate-sources</id> 
+				<phase>generate-sources</phase> <configuration> <sourceRoot>${basedir}/src/main/java</sourceRoot> 
+				<wsdlOptions> <wsdlOption> <wsdl>${basedir}/src/main/resources/wsdl/test.wsdl</wsdl> 
+				</wsdlOption> </wsdlOptions> </configuration> <goals> <goal>wsdl2java</goal> 
+				</goals> </execution> </executions> </plugin> -->
 
-				<executions>
-					<execution>
-						<id>generate-sources</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<sourceRoot>${basedir}/src/main/java</sourceRoot>
-							<wsdlOptions>
-								<wsdlOption>
-									<wsdl>${basedir}/src/main/resources/wsdl/test.wsdl</wsdl>
-								</wsdlOption>
-							</wsdlOptions>
-						</configuration>
-						<goals>
-							<goal>wsdl2java</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> 
-			 -->
-			
-        </plugins>
+		</plugins>
 	</build>
-   
-    <dependencies>
 
-        <!-- Spring framework -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+	<dependencies>
+
+		<!-- Spring framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
 			<version>4.2.2.RELEASE</version>
-        </dependency>
+		</dependency>
 
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-jdbc</artifactId>
-		<version>4.2.2.RELEASE</version>
-	</dependency>  
-	      
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-context-support</artifactId>
-          <version>4.2.2.RELEASE</version>
-      </dependency>
-        
-      <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.45</version>
-      </dependency>
-  	
-      <dependency>
-            <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-api</artifactId>
-		    <version>1.7.21</version>
-      </dependency> 		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
 
-      <!-- WebSphere MQ -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+
+		<!-- WebSphere MQ -->
 		<dependency>
 			<groupId>com.ibm.mq</groupId>
 			<artifactId>mqjms</artifactId>
@@ -170,7 +156,7 @@
 			<artifactId>mq</artifactId>
 			<version>6.0.0.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.ibm.mq</groupId>
 			<artifactId>dhbcore</artifactId>
@@ -182,74 +168,55 @@
 			<artifactId>connector</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.jms</groupId>
 			<artifactId>jms</artifactId>
 			<version>1.1</version>
 		</dependency>
-		
-<dependency>
-    <groupId>com.ibm.mq</groupId>
-    <artifactId>com.ibm.mq.allclient</artifactId>
-    <version>0.0.0.3</version>
-</dependency>						
-      <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
-      <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-all</artifactId>
-            <version>5.4.3</version>
-      </dependency>
 
-				
-        <!-- Apache CXF dependencies 
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>${cxf.version}</version>            
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http</artifactId>
-			<version>2.7.10</version>
-        </dependency>
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http-jetty</artifactId>
-			<version>2.7.10</version>
+			<groupId>com.ibm.mq</groupId>
+			<artifactId>com.ibm.mq.allclient</artifactId>
+			<version>0.0.0.3</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-api</artifactId>
-			<version>2.7.10</version>			
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-all</artifactId>
+			<version>5.4.3</version>
 		</dependency>
+
+		<!-- Apache CXF dependencies <dependency> <groupId>org.apache.cxf</groupId> 
+			<artifactId>cxf-rt-frontend-jaxws</artifactId> <version>${cxf.version}</version> 
+			</dependency> <dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-rt-transports-http</artifactId> 
+			<version>2.7.10</version> </dependency> <dependency> <groupId>org.apache.cxf</groupId> 
+			<artifactId>cxf-rt-transports-http-jetty</artifactId> <version>2.7.10</version> 
+			</dependency> <dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-api</artifactId> 
+			<version>2.7.10</version> </dependency> <dependency> <groupId>org.apache.cxf</groupId> 
+			<artifactId>cxf-core</artifactId> <version>3.1.4</version> </dependency> -->
+
+		<!-- Quartz for scheduling framework -->
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-core</artifactId>
-			<version>3.1.4</version>			
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>${quartz.version}</version>
 		</dependency>
-		-->
-		
-        <!-- Quartz framework -->
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>${quartz.version}</version>
-        </dependency>
-        		
-        <!-- UnitTest / Mockito -->
+
+		<!-- UnitTest / Mockito -->
 		<dependency>
 			<artifactId>junit</artifactId>
 			<groupId>junit</groupId>
 			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
-				
+
 		<dependency>
-		    <groupId>org.mockito</groupId>
-		    <artifactId>mockito-all</artifactId>
-		    <version>1.10.19</version>
-		    <scope>test</scope>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -257,15 +224,15 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		
-		<!--  JSR-330 JAVAX.INJECT -->
+
+		<!-- JSR-330 JAVAX.INJECT -->
 		<dependency>
-		    <groupId>javax.inject</groupId>
-		    <artifactId>javax.inject</artifactId>
-		    <version>1</version>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
 		</dependency>
 
-		
-    </dependencies>
-    
+
+	</dependencies>
+
 </project>

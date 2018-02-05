@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="connectionFactory"
+		class="org.springframework.boot.autoconfigure.jms.activemq.ActiveMQConnectionFactoryConfiguration$PooledConnectionFactoryConfiguration">
+		<constructor-arg value="failover:(tcp://192.168.40.144:61616)" />
+	</bean>
+
+	<bean id="" class="org.springframework.jms.core.JmsTemplate">
+		<constructor-arg ref="connectionFactory" />
+		<property name="sessionTransacted" value="false" />
+		<property name="receiveTimeout" value="5000" />
+	</bean>
+
+
+</beans>
