@@ -10,9 +10,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("./spring/autowire/q4/qualifier/springAutowired4.xml");
 
 		Logger logger = (Logger)context.getBean("logger");
-
 		logger.writeConsole("Hello there: ");
-
 		
 		((ConfigurableApplicationContext) context).close();
 	}
