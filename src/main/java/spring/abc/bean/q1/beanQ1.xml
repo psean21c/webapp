@@ -14,12 +14,16 @@ Instantiation of bean failed; No default constructor found;
     <bean id="bar" class="spring.abc.bean.q1.Bar">
 		<property name="name" value="bar1"></property>
     </bean>
-    
-	<bean id="foo" class="spring.abc.bean.q1.Foo">
+
+    <bean id="foo" class="spring.abc.bean.q1.Foo" abstract="true"
+    	autowire="no" autowire-candidate="true" lazy-init="true"
+    	primary="true">
 		<property name="name" value="foo1"></property>
-	</bean>
-	
-<!--  Answer: 
+		
+		<meta value="v" key="k" />
+    </bean>
+
+    <!--  Answer: 
     <bean id="bar" class="spring.abc.bean.q1.Bar">
 		<property name="name" value="bar1"></property>
     	<constructor-arg name="foo" ref="foo" type="spring.abc.bean.q1.Foo"/>
