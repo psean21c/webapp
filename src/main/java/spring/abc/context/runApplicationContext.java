@@ -19,7 +19,7 @@ public class runApplicationContext {
 	public static void main(String[] args) {
 		
 		// Problem occurred
-		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "/spring/abc/context/springCustomer.xml");
+		ApplicationContext ctx =  new FileSystemXmlApplicationContext( "./spring/abc/context/springCustomer.xml");
 		
 		// Solution-1
 		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "/src/main/java/spring/abc/context/springCustomer.xml");
@@ -28,7 +28,7 @@ public class runApplicationContext {
 		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "classpath:./spring/abc/context/springCustomer.xml");
 		
 		// Solution-3
-		ApplicationContext ctx =  new FileSystemXmlApplicationContext( "file:/C:/Users/sungmin.park/git/spark/webapp/src/main/java/spring/abc/context/springCustomer.xml");
+		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "file:/C:/Users/sungmin.park/git/spark/webapp/src/main/java/spring/abc/context/springCustomer.xml");
 
 		CustomerService cust = (CustomerService) ctx.getBean("customerService");
 		System.out.println(cust);
