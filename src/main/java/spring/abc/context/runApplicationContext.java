@@ -24,11 +24,13 @@ public class runApplicationContext {
 		// Solution-1
 		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "/src/main/java/spring/abc/context/springCustomer.xml");
 		
-		// Solution-2
+		// Solution-2 : classpath
 		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "classpath:./spring/abc/context/springCustomer.xml");
+		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "classpath:/spring/abc/context/springCustomer.xml");
 		
-		// Solution-3
+		// Solution-3 : file
 		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "file:/C:/Users/sungmin.park/git/spark/webapp/src/main/java/spring/abc/context/springCustomer.xml");
+		//ApplicationContext ctx =  new FileSystemXmlApplicationContext( "file:///C:/Users/sungmin.park/git/spark/webapp/src/main/java/spring/abc/context/springCustomer.xml");
 
 		CustomerService cust = (CustomerService) ctx.getBean("customerService");
 		System.out.println(cust);
