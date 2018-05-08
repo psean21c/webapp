@@ -12,7 +12,7 @@ Write to file: Hi again
 ***************************
  -->
 
-	<bean id="logger" class="spring.autowire.q1.Logger" >
+	<bean id="logger" class="spring.autowire.q1.Logger">
 	</bean>
 
 	<bean id="consolewriter" class="spring.autowire.q1.ConsoleWriter">
