@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
 
 <!-- 
-Question:
-Exception in thread "main" org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: 
-Line 5 in XML document from class path resource [spring/autowire/spring.xml] is invalid; 
-nested exception is org.xml.sax.SAXParseException; lineNumber: 5; columnNumber: 134; cvc-elt.1: 
-Cannot find the declaration of element 'beans'.
 
 1) Before
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -19,7 +16,26 @@ Cannot find the declaration of element 'beans'.
 	http://www.springframework.org/schema/context/spring-context.xsd"
 >
 
-2) After fixing the problem
+1st Problem:
+Exception in thread "main" org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: 
+Line 5 in XML document from class path resource [spring/autowire/spring.xml] is invalid; 
+nested exception is org.xml.sax.SAXParseException; lineNumber: 5; columnNumber: 134; cvc-elt.1: 
+Cannot find the declaration of element 'beans'.
+
+>> Simply Need to add <beans>
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		
+2) After fixing the beans..
+
+2nd Problem:
+Exception in thread "main" org.springframework.beans.factory.parsing.BeanDefinitionParsingException: 
+Configuration problem: Cannot locate BeanDefinitionDecorator for element [mbean-server]
+Offending resource: class path resource [spring/autowire/spring.xml]
+
+
+3) After fixing the problem
+
+
  -->
     <bean id="recommender" class="spring.autowire.MovieRecommender">
     	<context:mbean-server />
