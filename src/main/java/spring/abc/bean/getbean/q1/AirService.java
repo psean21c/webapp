@@ -1,11 +1,11 @@
 package spring.abc.bean.getbean.q1;
 
-public class Foo {
+public class AirService {
 	public String name;
 	
-	public Foo(){}
+	public AirService(){}
 	
-	public Foo(String name){
+	public AirService(String name){
 		this.name = name;
 	}
 	

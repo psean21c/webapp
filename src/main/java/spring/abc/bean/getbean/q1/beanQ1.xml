@@ -4,21 +4,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--  Question: Fix the problem below.
-
- 
--->
-
-    <bean id="foo" class="spring.abc.bean.getbean.q1.Foo">
-		<property name="name" value="foo1"></property>
-    </bean>
-    
-    <bean id="foo" class="spring.abc.bean.getbean.q1.Foo">
-		<property name="name" value="foo1"></property>
+    <bean id="airService1" class="spring.abc.bean.getbean.q1.AirService">
+		<property name="name" value="Good AirServiced"></property>
     </bean>
 
-    <!--  Answer: 
-
--->
     
 </beans>
