@@ -33,8 +33,8 @@ public class App {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("./spring/abc/bean/getbean/q1/beanQ1.xml");
 		
 		// 1)
-		AirService airService = (AirService) ctx.getBean("airService1");
-		System.out.println( "airService=" + airService.getName());
+//		AirService airService = (AirService) ctx.getBean("airService1");
+//		System.out.println( "airService=" + airService.getName());
 		// 2)
 //		AirService airService2 = ctx.getBean("airService1", AirService.class);
 //		System.out.println( "airService2=" + airService2.getName());

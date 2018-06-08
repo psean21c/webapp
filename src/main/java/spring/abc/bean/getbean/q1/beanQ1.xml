@@ -7,6 +7,9 @@
     <bean id="airService1" class="spring.abc.bean.getbean.q1.AirService">
 		<property name="name" value="Good AirServiced"></property>
     </bean>
+    <bean id="airService2" class="spring.abc.bean.getbean.q1.AirService">
+		<property name="name" value="Bad AirServiced"></property>
+    </bean>
 
     
 </beans>
