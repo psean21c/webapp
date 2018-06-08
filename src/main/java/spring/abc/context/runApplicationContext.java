@@ -6,11 +6,13 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /***
  * 
-Question : It will run the error when you are running FileSystemXmlApplicationContext()
+Question : Solve the problem below.
+It will run the error when you are running FileSystemXmlApplicationContext()
 
 Exception in thread "main" org.springframework.beans.factory.BeanDefinitionStoreException: 
 (The system cannot find the path specified)
-Caused by: java.io.FileNotFoundException: spring\abc\context\springCustomer.xml (The system cannot find the path specified)
+Caused by: java.io.FileNotFoundException: spring\abc\context\springCustomer.xml 
+(The system cannot find the path specified)
 
  *
  */
