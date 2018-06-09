@@ -1,0 +1,32 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+<!-- p.76-77 : 7.5 Bean Scopes (scoped beans as dependencies)
+
+[1st Question]
+Caused by: java.lang.IllegalStateException: No Scope registered for scope 'session'
+
+ -->
+	<bean id="userPreferences" class="spring.abc.scope.aop.UserPreferences" scope="session">
+		<constructor-arg value="Benz"/>
+	</bean>
+
+	<bean id="userManager" class="spring.abc.scope.aop.UserManager">
+		<property name="userPreferences" ref="userPreferences"/>
+		<property name="name" value="John"></property>
+	</bean>
+
+<!-- 
+	<bean id="userPreferences" class="spring.abc.scope.aop.UserPreferences" scope="session">
+	<bean id="userPreferences" class="spring.abc.scope.aop.UserPreferences">
+
+ApplicationContext ctx = new ClassPathXmlApplicationContext("./spring/abc/scope/aop/springScope.xml");
+
+To use Web
+http://www.knowledgewalls.com/j2ee/books/spring-30-examples/how-to-use-xmlwebapplicationcontext-in-spring-framework-with-example
+
+ -->
+</beans>
