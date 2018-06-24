@@ -37,16 +37,30 @@ Write to console: Hello there: black
 	</bean>
 
 
-
 	<context:annotation-config></context:annotation-config>
+	
+</beans>
 
-<!--  Answer-1: In the Logger.java
+<!--  
+Answer-1: In the Logger.java
+
+import org.springframework.beans.factory.annotation.Qualifier;
 
 	@Autowired
 	@Qualifier("blackConsoleWriter")
 	public void setConsoleWriter(ConsoleWriter writer) {
 		this.consoleWriter = writer;
 	}
+
+	<bean id="ColorConsoleWriter" class="spring.autowire.q4.qualifier.ConsoleWriter">
+		<property name="name" value="color"></property>
+	</bean>
 	
--->	
-</beans>
+Answer-2: In xml file.
+remove one of <bean>s .. for example..
+
+	<bean id="ColorConsoleWriter" class="spring.autowire.q4.qualifier.ConsoleWriter">
+		<property name="name" value="color"></property>
+	</bean>
+	
+-->

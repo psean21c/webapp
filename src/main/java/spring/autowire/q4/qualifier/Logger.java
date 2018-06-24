@@ -1,5 +1,6 @@
 package spring.autowire.q4.qualifier;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class Logger {
