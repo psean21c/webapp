@@ -11,8 +11,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Purpose :  different ApplicationContext 
  *            between AnnotationConfigApplicationContext and ClassPathXmlApplicationContext
  * Question: 
- * As of now, we don't use any configuration xml file even though we have beanQ3.xml
+ * [AS-IS] It's printing id=[1]	name=[myService] which are configured in the MyServiceImpl
+ *  we don't use any configuration xml file even though we have beanQ3.xml
  * Because we are using AnnotationConfigApplicationContext().
+ * [TO-DO]
  * Change it with ClassPathXmlApplicationContext() which has to call beanQ3.xml file
  * 
  * refer to other example: spring.basic.beans.component.scan.auto;
