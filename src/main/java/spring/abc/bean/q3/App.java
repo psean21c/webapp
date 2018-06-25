@@ -7,15 +7,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /***
  * 
-refer to: spring.basic.beans.component.scan.auto;
-Question: 
-Change AP(ApplicationContext) from AnnotationConfigApplicationContext to ClassPathXmlApplicationContext
-
-As of now, we don't use any configuration xml file even though we have beanQ3.xml
-Because we are using AnnotationConfigApplicationContext().
-Change it with ClassPathXmlApplicationContext() which has to call beanQ3.xml file
-
- *
+ * Reviewed by SPark
+ * Purpose :  different ApplicationContext 
+ *            between AnnotationConfigApplicationContext and ClassPathXmlApplicationContext
+ * Question: 
+ * As of now, we don't use any configuration xml file even though we have beanQ3.xml
+ * Because we are using AnnotationConfigApplicationContext().
+ * Change it with ClassPathXmlApplicationContext() which has to call beanQ3.xml file
+ * 
+ * refer to other example: spring.basic.beans.component.scan.auto;
  */
 public class App {
 	public static void main(String[] args) {
