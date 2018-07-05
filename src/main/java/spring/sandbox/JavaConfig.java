@@ -12,7 +12,7 @@ public class JavaConfig {
 	
 	@Bean
 	public Bar bar() {
-//		Bar bar = new Bar();
+//		AppConfig bar = new AppConfig();
 		bar.setName("bar1");
 		return bar;
 	}
