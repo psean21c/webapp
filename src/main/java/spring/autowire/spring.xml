@@ -32,13 +32,18 @@ Exception in thread "main" org.springframework.beans.factory.parsing.BeanDefinit
 Configuration problem: Cannot locate BeanDefinitionDecorator for element [mbean-server]
 Offending resource: class path resource [spring/autowire/spring.xml]
 
+    <bean id="recommender" class="spring.autowire.MovieRecommender">
+    	<context:mbean-server />
+    </bean>
 
 3) After fixing the problem
 
 
  -->
     <bean id="recommender" class="spring.autowire.MovieRecommender">
+    	<!--  
     	<context:mbean-server />
+    	-->
     </bean>
     <bean id="movieCatalogs" class="spring.autowire.MovieCatalog"/>
 		
