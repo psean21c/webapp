@@ -4,6 +4,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+/***
+ * Goal: 
+ * This sample doesn't require any bean.xml file.
+ * Using @ComponentScan, It creates Sterotype bean - CustomerService 
+ * 
+ */
+		
 @ComponentScan("spring.basic.beans.component.scan.auto")
 @Configuration
 public class App {
