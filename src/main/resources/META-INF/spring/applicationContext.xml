@@ -4,6 +4,15 @@
 	xmlns:osgi="http://www.springframework.org/schema/osgi" xmlns:cxf="http://camel.apache.org/schema/cxf"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd">
 
+	<bean id="userPreferences" class="spring.abc.scope.aop.UserPreferences" scope="session">
+		<constructor-arg value="Benz"/>
+	</bean>
+
+	<bean id="userManager" class="spring.abc.scope.aop.UserManager">
+		<property name="userPreferences" ref="userPreferences"/>
+		<property name="name" value="John"></property>
+	</bean>
+	
 <!--  
 	<cxf:cxfEndpoint id="cXFTest" address="/spark/learn"
 		endpointName="a:SOATestEndpoint" serviceName="a:SOATestEndpointService"
