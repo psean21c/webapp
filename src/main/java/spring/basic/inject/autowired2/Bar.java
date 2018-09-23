@@ -3,8 +3,8 @@ package spring.basic.inject.autowired2;
 public class Bar {
 
 	public String name;
-//	public Bar(){
-//		System.out.println("Bar created");
+//	public AppConfig(){
+//		System.out.println("AppConfig created");
 //	}
 
 	public String getName() {
