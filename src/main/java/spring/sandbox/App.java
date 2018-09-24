@@ -20,7 +20,7 @@ public class App {
 //////		System.out.println( "foo=" + foo.getName());
 
 //		ApplicationContext ctx = new AnnotationConfigApplicationContext(JavaConfig.class);
-//		Bar bar = (Bar) ctx.getBean(Bar.class);
+//		AppConfig bar = (AppConfig) ctx.getBean(AppConfig.class);
 //		System.out.println("bar=" + bar.getName());
 		
 		
